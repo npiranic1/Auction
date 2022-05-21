@@ -1,9 +1,14 @@
 import React from 'react'
 import './Home.css'
+import ProductCover from '../components/ProductCover'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <div className="product">
+        <ProductCover />
+      </div>
+    </>
   );
 }
 

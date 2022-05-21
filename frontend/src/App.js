@@ -1,11 +1,13 @@
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import CustomNavbar from 'Components/CustomNavbar'
+import Header from 'components/Header'
+import Home from 'pages/Home'
 
 function App() {
   return (
     <div className="App">
-      <CustomNavbar />
+      <Header />
+      <Home />
     </div>
   );
 }

@@ -2,14 +2,13 @@ import logo from 'logo.svg';
 import 'App.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar } from 'react-bootstrap';
-import './CustomNavbar.css';
+import './Header.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Outlet, Link } from "react-router-dom";
 
-function CustomNavbar() {
+function Header() {
   return (
     <>
       <Navbar className="NavBarDark" fixed="top" bg="dark" variant="dark">
@@ -43,4 +42,4 @@ function CustomNavbar() {
   );
 }
 
-export default CustomNavbar;
+export default Header;

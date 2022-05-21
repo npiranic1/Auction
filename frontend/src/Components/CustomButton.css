@@ -1,0 +1,23 @@
+.buttonReact{
+    width: 192px;
+    height: 57px;
+    background-color: white;
+    border-color: #8367D8;
+    border-width: 2px;
+    opacity: 100%;
+    font-family: Lato-Bold;
+    font-size: 18px;
+    color: #252525;
+    letter-spacing: 0.63px;
+}
+
+.buttonReact:hover {
+    background-color: #8367D8;
+    opacity: 100%;
+    transition: 0.2s;
+}
+
+.buttonText{
+    height: 22px;
+    align-items: center;
+}
