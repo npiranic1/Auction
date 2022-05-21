@@ -1,4 +1,3 @@
-import logo from 'logo.svg';
 import 'App.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar } from 'react-bootstrap';
@@ -27,12 +26,12 @@ function Header() {
         </Nav.Link>
       </Navbar>
       <Navbar className="NavBar">
-          <Navbar.Brand>
-            <text> <GavelIcon className="logoIcon"/> </text>
-            <text className="logo">AUCTION</text>
+           {/* <Navbar.Brand className="NavBar">
+            
           </Navbar.Brand>
           {/* <SearchBar placeholder="Try enter: Shoes" /> */}
-
+            <text> <GavelIcon className="logoIcon"/> </text>
+            <text className="logo">AUCTION</text>
           <Nav>
             <Nav.Link to="/home">HOME</Nav.Link>
             {/* <Nav.Link href="shop">SHOP</Nav.Link>

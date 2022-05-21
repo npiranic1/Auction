@@ -1,0 +1,34 @@
+.productDetail{
+   width: 260px;
+   height: 300px;
+}
+
+.cover{
+    width: 240px;
+    height: 230px;
+    float: left;
+    background-color: rgb(241, 243, 245);
+
+}
+
+.productDetails {
+    width: 250px;
+    margin: 5px;
+    float: left;
+}
+
+.productCategory{
+    font-family: Lato-Bold;
+    font-size: 24px;
+    color: #252525;
+    letter-spacing: 0.84px;
+    float: left;
+}
+
+.productPrice{
+    font-family: Lato-Regular;
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+    float: left;
+} 
