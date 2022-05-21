@@ -44,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
       residence_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: false,
         references: {
           model: 'residence',
           key: 'id',

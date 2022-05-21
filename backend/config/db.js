@@ -56,13 +56,23 @@ Residence.hasMany(User, {
 	sourceKey: "id"
 });
 User.belongsTo(Residence, {
-	foreignKey: "residence_ id",
+   foreignKey: "residence_id",
 	sourceKey: "id"
 });
 
 // link bid 
+/* 
+db.branchProduct = db.branches.belongsToMany(db.products, {
+   through: branchProduct,
+   foreign_key: "branch_id",
+ });
+ db.products.belongsToMany(db.branches, {
+   through: branchProduct,
+   foreign_key: "product_id",
+ }); */
 // link wishlist
 
 db.sync(() => console.log(`Tables created!`));
+// add db initialization
 
 module.exports = { db, User, Image, Product, Category, Residence, Bid, Wishlist };

@@ -1,35 +1,26 @@
 "use strict";
-const express = require("express");
-const { db } = require("../config/db")
+const express = require("express")
 const { Product, Image } = require('../config/db')
+const Sequelize = require("sequelize")
 const router = express.Router()
 
 // GET method for random product details
-router.get("/products/random", async (req, res) => {
-    // dodati uslov da je main 1
-    const { QueryTypes } = require('sequelize');
-    const result = await db.query(
-        'SELECT product.id, product.name, product.price, product.description, image.url FROM product INNER JOIN image ON image.product_id = product.id where image.main = 1',
-        {
-          replacements: { status: 'active' },
-          type: QueryTypes.SELECT
-        }
-      );
-      res.send(result);  
-
-     
-    /* Product.findAll({
-        /* limit: 1,
+router.get("/products/random", (req, res) => {  
+    Product.findAll({
+        limit: 1,
         order: Sequelize.literal('rand()'), 
-        include: [ {model: Image}]
+        include: [ { 
+            model: Image, 
+            as: 'images',
+            attributes: ['url'],
+            where: { main: 1 }
+        }]
     })
          .then(product => {
              res.send(product);
         }).catch(err => 
             res.status(500).send(err)
-        ); */
-            
- 
+        );  
 }); 
 
 // GET method for new arrivals
