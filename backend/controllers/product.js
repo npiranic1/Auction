@@ -1,9 +1,11 @@
 "use strict";
-const { db } = require("../config/db");
+const express = require("express");
+const { db } = require("../config/db")
 const { Product, Image } = require('../config/db')
+const router = express.Router()
 
 // GET method for random product details
-exports.getProductDetails = async (req, res) => {
+router.get("/products/random", async (req, res) => {
     // dodati uslov da je main 1
     const { QueryTypes } = require('sequelize');
     const result = await db.query(
@@ -28,10 +30,10 @@ exports.getProductDetails = async (req, res) => {
         ); */
             
  
-}; 
+}); 
 
 // GET method for new arrivals
-exports.getNewArrivals = (req, res) => {
+router.get("/products/new-arrivals", (req, res) => {
     Product.findAll({ 
         limit: 8 ,
         order: [
@@ -46,12 +48,12 @@ exports.getNewArrivals = (req, res) => {
                     message: "Error getting new arrivals!"
                 });
             });
-};  
+});  
 
 // GET method for last chance
 
 // ograničiti end_date u budućnosti
-exports.getLastChance = (req, res) => {
+router.get("/products/last-chance", (req, res) => {
     Product.findAll({
         limit: 8,
         order: [
@@ -66,4 +68,6 @@ exports.getLastChance = (req, res) => {
                     message: err
                 });
             });
-};
+});
+
+module.exports = router;

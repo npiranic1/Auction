@@ -51,12 +51,12 @@ Image.belongsTo(Product, {
 });
 
 // link user and residence
-User.hasOne(Residence, {
-	foreignKey: "residence_ id",
+Residence.hasMany(User, {
+	foreignKey: "residence_id",
 	sourceKey: "id"
 });
-Residence.belongsTo(User, {
-	foreignKey: "residence_id",
+User.belongsTo(Residence, {
+	foreignKey: "residence_ id",
 	sourceKey: "id"
 });
 
