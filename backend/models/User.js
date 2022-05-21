@@ -6,10 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
-        unique: true
+        primaryKey: true
       },
       first_name: {
         type: Sequelize.STRING,
@@ -46,7 +44,12 @@ module.exports = (sequelize, DataTypes) => {
       residence_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: false
+        unique: false,
+        references: {
+          model: 'residence',
+          key: 'id',
+          as: 'residence_id'
+        }
       },
       image_url: {
         type: Sequelize.STRING,

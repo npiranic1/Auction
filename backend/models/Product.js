@@ -6,10 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
-        unique: true
+        primaryKey: true
       },
       name: {
         type: Sequelize.STRING,
@@ -25,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
         unique: false,
         references: {
           model: 'category',
-          key: 'id'
+          key: 'id',
+          as: 'category_id'
         }
       },
       description: {
@@ -45,7 +44,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         references: {
           model: 'user',
-          key: 'id'
+          key: 'id',
+          as: 'user_id'
         }
       },
       createdAt: Sequelize.DATE,

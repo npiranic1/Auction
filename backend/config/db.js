@@ -15,29 +15,54 @@ const Product = require('../models/Product')(db, Sequelize);
 const Image = require('../models/Image')(db, Sequelize);
 const Category = require('../models/Category')(db, Sequelize);
 const User = require('../models/User')(db, Sequelize);
-/* User.sync();
-Product.sync();
-Image.sync();
-Category.sync(); */
+const Residence = require("../models/Residence")(db, Sequelize);
+const Bid = require("../models/Bid")(db, Sequelize);
+const Wishlist = require("../models/Wishlist")(db, Sequelize);
 
 // link user and product
 User.hasMany(Product, {
    foreignKey: "user_id",
+   sourceKey: "id"
 });
-Product.belongsTo(User);
+Product.belongsTo(User, {
+	foreignKey: "user_id",
+	sourceKey: "id"
+});
 
 // link product and category
 Category.hasMany(Product, {
-   foreignKey: "category_id"
+   foreignKey: "category_id",
+   sourceKey: "id"
 });
-Product.belongsTo(Category);
+Product.belongsTo(Category, {
+	foreignKey: "category_id",
+	sourceKey: "id"
+});
 
 // link product and image
 Product.hasMany(Image, {
-   foreignKey: 'product_id'
+   as: "images",
+   foreignKey: 'product_id',
+   sourceKey: "id"
  });
-Image.belongsTo(Product);
+Image.belongsTo(Product, {
+   foreignKey: "product_id",
+   sourceKey: "id"
+});
+
+// link user and residence
+User.hasOne(Residence, {
+	foreignKey: "residence_ id",
+	sourceKey: "id"
+});
+Residence.belongsTo(User, {
+	foreignKey: "residence_id",
+	sourceKey: "id"
+});
+
+// link bid 
+// link wishlist
 
 db.sync(() => console.log(`Tables created!`));
 
-module.exports = db;
+module.exports = { db, User, Image, Product, Category, Residence, Bid, Wishlist };

@@ -1,37 +1,38 @@
 const Sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const Image = sequelize.define(
-    "image",
+  const Residence = sequelize.define(
+    "residence",
     {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true
       },
-      url: {
+      address: {
         type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: true
       },
-      product_id: {
+      city: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      zip_code: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        unique: false,
-        references: {
-          model: 'product',
-          key: 'id',
-          as: 'product_id'
-        }
+        allowNull: true
       },
-      main: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
+      state: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      country: {
+        type: Sequelize.STRING,
+        allowNull: true
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     },
     { freezeTableName: true }
   );
-  return Image;
+  return Residence;
 };
