@@ -7,28 +7,29 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
+import GavelIcon from '@mui/icons-material/Gavel';
 
 function Header() {
   return (
     <>
       <Navbar className="NavBarDark" fixed="top" bg="dark" variant="dark">
         <Nav.Link href="https://www.facebook.com/">
-          <FacebookIcon/>
+          <FacebookIcon className="navBarIcon"/>
         </Nav.Link>
         <Nav.Link href="https://www.instagram.com/">
-          <InstagramIcon/>
+          <InstagramIcon className="navBarIcon"/>
         </Nav.Link>
         <Nav.Link href="https://twitter.com/">
-          <TwitterIcon/>
+          <TwitterIcon className="navBarIcon"/>
         </Nav.Link>
         <Nav.Link href="https://www.google.com/">
-          <GoogleIcon />
+          <GoogleIcon className="navBarIcon" />
         </Nav.Link>
       </Navbar>
       <Navbar className="NavBar">
           <Navbar.Brand>
-            <img src={logo} width="40px" height="40px"/>{' '}
-            <text color="grey" className="logo">AUCTION</text>
+            <text> <GavelIcon className="logoIcon"/> </text>
+            <text className="logo">AUCTION</text>
           </Navbar.Brand>
           {/* <SearchBar placeholder="Try enter: Shoes" /> */}
 
