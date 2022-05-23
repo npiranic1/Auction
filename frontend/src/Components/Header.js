@@ -7,6 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import GavelIcon from '@mui/icons-material/Gavel';
+import Text from 'react-text';
 
 function Header() {
   return (
@@ -30,7 +31,7 @@ function Header() {
             
           </Navbar.Brand>
           {/* <SearchBar placeholder="Try enter: Shoes" /> */}
-            <text> <GavelIcon className="logoIcon"/> </text>
+            <Text> <GavelIcon className="logoIcon"/> </Text>
             <text className="logo">AUCTION</text>
           <Nav>
             <Nav.Link to="/home">HOME</Nav.Link>

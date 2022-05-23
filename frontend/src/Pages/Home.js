@@ -1,8 +1,8 @@
 import React from 'react'
 import './Home.css'
-import ProductCover from '../components/ProductCover'
-import ProductNavbar from '../components/ProductNavbar'
-import ProductContainer from '../components/ProductContainer'
+import ProductCover from 'components/ProductCover'
+import ProductNavbar from 'components/ProductNavbar'
+import ProductContainer from 'components/ProductContainer'
 
 function Home() {
   return (

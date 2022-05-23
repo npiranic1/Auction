@@ -14,8 +14,9 @@ function ProductDetail() {
             <img src={product.url} className="cover"/>
         </div>
         <div className="productDetails">
-            <text className="productCategory">{product.category}</text> <br/>
-            <text className="productPrice">{product.price}</text> 
+           
+            <p className="productCategory">{product.category}</p> <br/>
+            <p className="productPrice">{product.price}</p> 
         </div>
     </div>
   )
