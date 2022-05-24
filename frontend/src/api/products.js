@@ -1,5 +1,8 @@
 import axios from 'axios';
+import BASE_URL from './config';
 
-export default axios.create({
-    baseURL: 'http://localhost:3030'
-});
+export async function getRandomProduct(){
+    return axios.get(BASE_URL + "/products/random");
+};
+
+

@@ -1,38 +1,23 @@
 import React from 'react'
 import './ProductCover.css'
 import { useState, useEffect } from 'react';
-import api from 'api/products.js'
+import api, { getRandomProduct } from 'api/products.js'
 
 function ProductCover() {
 
-    const [ randomProduct, setRandomProduct ] = useState('');
-    const [ name, setName ] = useState('');
-    const [ price, setPrice ] = useState('');
-    const [ description, setDescription ] = useState('');
-    const [ url, setUrl ] = useState('');
-
-    
+    const [ product, setProduct ] = useState({}); 
 
     useEffect(() => {
         const fetchProduct = async () => {
             try{
-                const res = await api.get('/products/random');
-                 
-                setRandomProduct(JSON.stringify(res.data));
-                //console.log(randomProduct);
-                //console.log(JSON.parse(randomProduct));
-                //console.log(JSON.parse(randomProduct)[0].images[0].url);
-                
-                setName((JSON.parse(randomProduct)[0].name).toString());
-                //console.log(name);
-                
-                setPrice((JSON.parse(randomProduct)[0].price).toString());
-                //console.log(price);
-                setDescription((JSON.parse(randomProduct)[0].description).toString());
-                //console.log(description);
-                setUrl((JSON.parse(randomProduct)[0].images[0].url).toString());
-                //console.log(url);
-                
+                const res = await getRandomProduct();
+                setProduct({
+                    name: res.data[0].name,
+                    price: res.data[0].price,
+                    description: res.data[0].description,
+                    url: res.data[0].images[0].url
+                });
+                console.log(res);
             } catch(err){
                 if(err.res){
                     console.log(err.res.data);
@@ -60,14 +45,14 @@ function ProductCover() {
     <>
         <div className="productCover">
             <div className="details">
-                <p className="name">{name}</p> 
-                <p className="price">Start from - ${price}</p> 
-                <p className="description">{description}</p>
+                <p className="name">{product.name}</p> 
+                <p className="price">Start from - ${product.price}</p> 
+                <p className="description">{product.description}</p>
                 {/* Button je zakomentarisan jer nema funkcionalnosti */}
                 { /* <CustomButton/> */}
             </div>
             <div className="coverPhoto">
-                <img src={url} className="coverPhoto"/>
+                <img src={product.url} className="coverPhoto"/>
             </div> 
         </div>
     </>
