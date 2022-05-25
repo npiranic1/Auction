@@ -1,14 +1,14 @@
 "use strict";
 const express = require("express")
-const { Product, Image } = require('../config/db')
-const Sequelize = require("sequelize")
+const { Product, Image, Category } = require('../config/db')
+const Sequelize = require("sequelize");
 const router = express.Router()
 
 // GET method for random product details
 router.get("/products/random", (req, res) => {  
     Product.findAll({
         limit: 1,
-        order: Sequelize.literal('rand()'), 
+        order: Sequelize.literal('rand()'),
         include: [ { 
             model: Image, 
             as: 'images',
@@ -29,7 +29,14 @@ router.get("/products/new-arrivals", (req, res) => {
         limit: 8 ,
         order: [
             ['start_date', 'DESC']
-        ]
+        ], 
+        include: [{ 
+            model: Image, 
+            as: 'images',
+            attributes: ['url'],
+            limit: 1,
+            where: { main: 1 },
+        }]
     })
         .then((product) => {
             res.send(product);
@@ -49,7 +56,14 @@ router.get("/products/last-chance", (req, res) => {
         limit: 8,
         order: [
             ['end_date', 'ASC']
-        ] 
+        ],
+        include: [{ 
+            model: Image, 
+            as: 'images',
+            attributes: ['url'],
+            limit: 1,
+            where: { main: 1 },
+        }]
     })
         .then((product) => {
             res.send(product);

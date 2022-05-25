@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const db = new Sequelize("auction", "root", "auctionpass", {
+const db = new Sequelize("auction", "root", "", {
    host: "localhost",
    dialect: "mysql"
 });
@@ -31,6 +31,7 @@ Product.belongsTo(User, {
 
 // link product and category
 Category.hasMany(Product, {
+   as: "category",
    foreignKey: "category_id",
    sourceKey: "id"
 });
@@ -60,19 +61,81 @@ User.belongsTo(Residence, {
 	sourceKey: "id"
 });
 
-// link bid 
-/* 
-db.branchProduct = db.branches.belongsToMany(db.products, {
-   through: branchProduct,
-   foreign_key: "branch_id",
- });
- db.products.belongsToMany(db.branches, {
-   through: branchProduct,
-   foreign_key: "product_id",
- }); */
-// link wishlist
+// link bid and user
+User.hasMany(Bid, {
+   foreignKey: "user_id",
+	sourceKey: "id"
+});
+Bid.belongsTo(User, {
+   foreignKey: "user_id",
+	sourceKey: "id"
+});
 
+// link bid and product
+Product.hasMany(Bid, {
+   foreignKey: "product_id",
+	sourceKey: "id"
+});
+Bid.belongsTo(Product, {
+   foreignKey: "product_id",
+	sourceKey: "id"
+});
+// link wishlist and user
+User.hasMany(Wishlist, {
+   foreignKey: "user_id",
+	sourceKey: "id"
+});
+Wishlist.belongsTo(User, {
+   foreignKey: "user_id",
+	sourceKey: "id"
+});
+
+// link wishlist and product
+Product.hasMany(Wishlist, {
+   foreignKey: "product_id",
+	sourceKey: "id"
+});
+Wishlist.belongsTo(Product, {
+   foreignKey: "product_id",
+	sourceKey: "id"
+});
 db.sync(() => console.log(`Tables created!`));
+
 // add db initialization
+/* 
+db.sync({ force: true })
+.then(function() {
+	dataBaseInitialization().then(function() {
+		console.log('Database & tables created!');
+		process.exit();
+	});
+});
+
+function dataBaseInitialization() {
+	return new Promise(function(resolve, reject) {
+		Promise.all([
+			Category.create({id: 1, name: "Shoes Collection"}),
+			Category.create({id: 2, name: "Flip Flops Collection"}),
+         Category.create({id: 3, name: "Sandals Collection"}),
+			Category.create({id: 4, name: "High Heels Collection"}),
+			Category.create({id: 5, name: "Boots Collection"})
+		]).then( res => {
+			Promise.all([
+				Residence.create({id: 1, address: 'Beverly Rd', city: 'Minhen', zip_code: '11207', state: 'Bavaria', country: 'Germany'}),
+				Residence.create({id: 1, address: 'Fifth Ave', city: 'Minhen', zip_code: '11207', state: 'Bavaria', country: 'Germany'})
+			]).then( res => { }) 
+				Promise.all([
+					User.create({id: 1, first_name: 'Jhonny', last_name: 'Christie', username: 'jchristie1', email: 'jcristie1@gmail.com', password: 'password', gender: 'male', phone_number: '91838478', residence_id: 1, image_url: ''}),
+				   User.create({id: 2, first_name: 'Elsa', last_name: 'Salvatore', username: 'esalvatore1', email: 'esalvatore1@gmail.com', password: 'pass1', gender: 'female', phone_number: '918384753', residence_id: 2, image_url: ''}),
+				   User.create({id: 3, first_name: 'Amelia', last_name: 'Gilbert', username: 'agilbert1', email: 'agilbert1@gmail.com', password: 'password1', gender: 'female', phone_number: '14349537', residence_id: 2, image_url: ''})
+				]).then( res => { 
+               /* Promise.all([
+                  Product.create()...
+               ]) 
+            }).catch(err => {console.log(err)})
+			   .catch(err => {console.log(err)});
+      }).catch(err => {console.log(err)});
+	});
+} */
 
 module.exports = { db, User, Image, Product, Category, Residence, Bid, Wishlist };
