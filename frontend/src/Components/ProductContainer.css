@@ -3,6 +3,7 @@
     margin-right: 171px;
     align-items: center;
     width: 1200px;
+    float:none;
 }
 
 .row{
@@ -11,7 +12,7 @@
 }
 
 .col{
-    margin: 2px;
+    margin: 15px;
     width: 260px;
-    padding: 2px;
+    padding: 5px;
 }

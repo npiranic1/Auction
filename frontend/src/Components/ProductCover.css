@@ -14,10 +14,11 @@
 }
 
 .name{
-    font-family: Lato-Regular;
+    /*font-family: Lato-Regular;*/
     font-size: 46px;
     color: #252525;
     letter-spacing: 1.61px;
+    width: 323px;
     float: left;
 }
 
@@ -52,4 +53,5 @@
     width: 400px;
     height: 300px;
     margin: 10px;
+    alt: "";
 }

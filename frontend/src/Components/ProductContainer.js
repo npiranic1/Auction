@@ -3,20 +3,14 @@ import './ProductContainer.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import ProductDetail from './ProductDetail'
 
-function ProductContainer() {
+
+function ProductContainer({products}) {
   return (
     <Container className="container">
         <Row className="row">
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
-        </Row>
-        <Row className="row">
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
-            <Col className="col"><ProductDetail/> </Col>
+          {products.map(product => (
+            <Col key={product.id} lg={4}  className="col"><ProductDetail product={product}/> </Col>
+          ))}
         </Row>
     </Container>
   )

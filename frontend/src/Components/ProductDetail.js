@@ -1,13 +1,13 @@
 import React from 'react'
 import './ProductDetail.css'
+import PropTypes from 'prop-types'
 
-function ProductDetail() {
-    const product = {
-        category: "Shoes Collection", 
-        price: "Star from -$240.00",
-        url: "https://cdn.shopify.com/s/files/1/0324/6781/2487/products/adidas-superstar-foundation-by3715-1_600x.png?v=1595615141"
-    };
+function ProductDetail({product}) {
     
+    ProductDetail.propTypes = {
+        product: PropTypes.object
+    }
+
   return (
     <div className="productDetail">
         <div className="cover">
@@ -15,8 +15,8 @@ function ProductDetail() {
         </div>
         <div className="productDetails">
            
-            <p className="productCategory">{product.category}</p> <br/>
-            <p className="productPrice">{product.price}</p> 
+            <p className="productCategory">{product.name}</p> <br/>
+            <p className="productPrice">Start from ${product.price}</p> 
         </div>
     </div>
   )
