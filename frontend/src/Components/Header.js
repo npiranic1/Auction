@@ -1,5 +1,4 @@
 import 'App.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar } from 'react-bootstrap';
 import './Header.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -29,14 +28,15 @@ function Header() {
       <Navbar className="NavBar">
            {/* <Navbar.Brand className="NavBar">
             
-          </Navbar.Brand>
-          {/* <SearchBar placeholder="Try enter: Shoes" /> */}
+  </Navbar.Brand> 
+  <SearchBar placeholder="Try enter: Shoes" /> */ }
+            
             <Text> <GavelIcon className="logoIcon"/> </Text>
             <text className="logo">AUCTION</text>
           <Nav>
             <Nav.Link to="/home">HOME</Nav.Link>
             {/* <Nav.Link href="shop">SHOP</Nav.Link>
-            <Nav.Link href="myAccout">MY ACCOUNT</Nav.Link> */}
+            <Nav.Link href="myAccout">MY ACCOUNT</Nav.Link> */} 
           </Nav>
       </Navbar>
     </>
