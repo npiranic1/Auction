@@ -1,0 +1,24 @@
+.product{
+    background-color: #FAFAFA;
+    height: 563px; 
+    padding: 20px;
+}
+
+.title{
+    font-size: 28px;
+    color: #252525;
+    opacity: 100%;
+    letter-spacing: 0.98px;
+    font-style: inherit;
+}
+
+.navBar{
+    padding-left: 170px;
+    padding-right: 171px;
+}
+
+.navBarSelect{
+    border-bottom: 3px;
+    border-color: #ECECEC;
+    width: 1440px;
+} 

@@ -1,0 +1,52 @@
+.productCover{
+    display: flex;
+    width: auto;
+    padding: 100px;
+    margin-left: 300px;
+    align-items: center;
+}
+
+.details {
+    width: 317px;
+    margin: 10px;
+    float: left;
+}
+
+.name{
+    font-size: 46px;
+    color: #252525;
+    letter-spacing: 1.61px;
+    width: 323px;
+    float: left;
+}
+
+.price{
+    font-size: 24px;
+    color: #8367D8;
+    letter-spacing: 0.84px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.description{
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+    line-height: 22px;
+    width: 323px;
+    height: 88px;
+    float: left;
+}
+
+.button{
+    float: left;
+    margin-top: 5px;
+    background-color: #252525;
+}
+
+.coverPhoto{
+    opacity: 100%;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+}

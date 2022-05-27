@@ -1,0 +1,35 @@
+.NavBar{
+    padding-left: 170px;
+    padding-right: 171px;
+    margin-top: 40px;
+    height: 80px;
+    border: 1px;
+    border-color: black;
+    font-size: 19px;
+    background-color: #cfc3f4;
+}
+
+.NavBarDark{
+    padding-left: 164px;
+    padding-right: 171px;
+    height: 40px;
+    position: fixed;
+}
+
+.navBarIcon{
+    color: gray;
+    width: 25px;
+    height: 25px;
+}
+
+.logoIcon{
+    width: "15px";
+    height: "15px";
+    color: #8367D8;
+}
+
+.logo{
+    font-size: 24px;
+    color: #8367D8;
+    letter-spacing: 0.84px;
+}

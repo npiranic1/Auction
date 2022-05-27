@@ -1,0 +1,39 @@
+.productDetail{
+   width: 260px;
+   height: 300px;
+}
+
+.cover{
+    width: 260px;
+    height: 250px;
+    float: left;
+    background-color: rgb(241, 243, 245);
+    margin-bottom: 10px;
+}
+
+.cover:hover{
+    opacity: 0.7;
+}
+
+.productDetails {
+    width: 260px;
+    margin: 5px;
+    float: left;
+}
+
+.productCategory{
+    font-size: 24px;
+    color: #252525;
+    letter-spacing: 0.84px;
+    float: left;
+    width: 260px;
+}
+
+.productPrice{
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+    float: left;
+    width: 260px;
+    margin-top: -10px;
+} 
