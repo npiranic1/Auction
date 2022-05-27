@@ -10,11 +10,9 @@
     width: 317px;
     margin: 10px;
     float: left;
-
 }
 
 .name{
-    /*font-family: Lato-Regular;*/
     font-size: 46px;
     color: #252525;
     letter-spacing: 1.61px;
@@ -23,7 +21,6 @@
 }
 
 .price{
-    font-family: Lato-Regular;
     font-size: 24px;
     color: #8367D8;
     letter-spacing: 0.84px;
@@ -32,7 +29,6 @@
 }
 
 .description{
-    font-family: Lato-Regular;
     font-size: 16px;
     color: #252525;
     letter-spacing: 0.56px;
@@ -53,5 +49,4 @@
     width: 400px;
     height: 300px;
     margin: 10px;
-    alt: "";
 }
