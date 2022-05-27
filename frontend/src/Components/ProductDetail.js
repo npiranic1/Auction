@@ -11,7 +11,7 @@ function ProductDetail({product}) {
   return (
     <div className="productDetail">
         <div className="cover">
-            <img src={product.url} className="cover"/>
+            <img alt="cover" src={product.url} className="cover"/>
         </div>
         <div className="productDetails">
            
