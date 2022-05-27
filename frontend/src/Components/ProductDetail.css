@@ -22,7 +22,6 @@
 }
 
 .productCategory{
-    /*font-family: Lato-Bold;*/
     font-size: 24px;
     color: #252525;
     letter-spacing: 0.84px;
@@ -31,7 +30,6 @@
 }
 
 .productPrice{
-    /*font-family: Lato-Regular;*/
     font-size: 16px;
     color: #252525;
     letter-spacing: 0.56px;
