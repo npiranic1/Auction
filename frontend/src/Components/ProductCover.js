@@ -2,7 +2,6 @@ import React from 'react'
 import './ProductCover.css'
 import { useState, useEffect } from 'react';
 import { getRandomProduct } from 'api/products.js'
-import CustomButton from './CustomButton'
 
 function ProductCover() {
 
@@ -38,11 +37,11 @@ function ProductCover() {
                 <p className="name">{product.name}</p> 
                 <p className="price">Start from - ${product.price}</p> 
                 <p className="description">{product.description}</p>
-                {/* Button je zakomentarisan jer nema funkcionalnosti */}
-                {/* <CustomButton/> */}
+                {/*Button je zakomentarisan jer nema funkcionalnosti */}
+                {/*<CustomButton/> */}
             </div>
             <div className="coverPhoto">
-                <img src={product.url} className="coverPhoto"/>
+                <img  alt="coverPhoto" src={product.url} className="coverPhoto"/>
             </div> 
         </div>
     </>
