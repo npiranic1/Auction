@@ -8,14 +8,14 @@ import Link from '@mui/material/Link'
   console.info('You clicked a breadcrumb.');
 } */
 
-function BreadCrumbs() {
+function BreadCrumbs({className}) {
   return (
-    <div role="presentation" >
+    <div role="presentation" className={className} >
       <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          Home
+        <Link underline="hover" color="inherit" href="/" className="bcPage">
+          HOME
         </Link>
-        <Typography color="text.primary">Single product</Typography>
+        <Typography color="text.primary" className="dcTitle">SINGLE PRODUCT</Typography>
       </Breadcrumbs>
     </div>
   )

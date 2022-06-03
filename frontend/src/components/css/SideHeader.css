@@ -1,7 +1,7 @@
 .sideHeader{
     background: #FAFAFA;
     padding-left: 170px;
-    padding-right: 171px;
+    padding-right: 171px; 
     height: 60px;
     display: flex;
 }
@@ -15,12 +15,10 @@
     margin-right: 800px;
 }
 
-.breadCrumb{
-    font-size: 16px;
-    color: #252525;
-    letter-spacing: 0.56px;
+.breadCrumbs{
     align-self: flex-end;
-    display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .pPage{
