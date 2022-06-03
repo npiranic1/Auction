@@ -11,8 +11,8 @@ import Link from '@mui/material/Link'
 function BreadCrumbs({className}) {
   return (
     <div role="presentation" className={className} >
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/" className="bcPage">
+      <Breadcrumbs>
+        <Link underline="none" color="#252525" href="/" className="bcPage">
           HOME
         </Link>
         <Typography color="text.primary" className="dcTitle">SINGLE PRODUCT</Typography>

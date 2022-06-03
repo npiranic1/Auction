@@ -10,6 +10,7 @@ function SingleProduct({product, images, bids}) {
 
     const [ bid, setBid ] = useState(0);
     const [ user, setUser] = useState({});
+    const [ message, setMessage ] = useState('');
 
     useEffect(() => {
         const fetchUser= async () => {
@@ -32,7 +33,11 @@ function SingleProduct({product, images, bids}) {
     }, [])
 
    async function handlePlaceBid(){
-        const res = await placeBid(user.id, product.id, bid);
+       try{
+            const res = await placeBid(user.id, product.id, bid);
+       }catch(err){
+            console.log(err);
+       }
     }; 
 
   return (
@@ -55,7 +60,7 @@ function SingleProduct({product, images, bids}) {
                 <input type='number' className="pPlaceholder" id="ph" value={bid} onChange={(e) => setBid(e.target.value)}/>
                 <CustomButton disabled={false} caption="PLACE BID" id="pb" onClick={handlePlaceBid}/>
             </div>
-            <p className="des">Enter ${bids.length > 0 ? bids[0].price : "0"} or more</p>
+            <p className="des" id="message" value={message}>Enter ${bids.length > 0 ? bids[0].price : product.price} or more</p>
             <p className="bidInformation">Highest bid: ${bids.length > 0 ? bids[0].price : "0"}</p>
             <p className="bidInformation">No bids: {bids.length}</p>
             <p className="bidInformation">Time left: {product.timeLeft} days</p>

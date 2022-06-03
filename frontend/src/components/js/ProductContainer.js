@@ -10,7 +10,6 @@ function ProductContainer({products}) {
   const history = useHistory();
 
   function routeChange(id){
-    console.log(id);
     let path = `home/single-product`; 
     history.push({
       pathname: path,

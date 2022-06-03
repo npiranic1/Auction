@@ -4,6 +4,14 @@
     letter-spacing: 0.56px;
 }
 
+.bcPage:link{
+    text-decoration: none;
+}
+
+.bcPage:hover{
+    text-decoration: none;
+}
+
 .dcTitle{
     font-size: 16px;
     color: #252525;

@@ -14,6 +14,7 @@ export async function placeBid(userId, productId, bid){
         console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error)
       });
+      // handle error
 };

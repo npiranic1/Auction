@@ -34,7 +34,7 @@ function Header() {
             <Text> <GavelIcon className="logoIcon"/> </Text>
             <text className="logo">AUCTION</text>
           <Nav>
-            <Link to="/">HOME</Link>
+            <Link to="/" className="navLink">HOME</Link>
           </Nav>
       </Navbar>
       </>
