@@ -2,7 +2,8 @@ const Sequelize = require("sequelize");
 
 const db = new Sequelize("auction", "root", "auctionpass", {
    host: "localhost",
-   dialect: "mysql"
+   dialect: "mysql",
+   logging: console.log
 });
 
 db.authenticate().then(()=> {
@@ -63,26 +64,28 @@ User.belongsTo(Residence, {
 
 // link bid and user
 User.hasMany(Bid, {
-   foreignKey: "user_id",
+    foreignKey: "user_id",
 	sourceKey: "id"
 });
 Bid.belongsTo(User, {
-   foreignKey: "user_id",
+    foreignKey: "user_id",
 	sourceKey: "id"
 });
 
 // link bid and product
 Product.hasMany(Bid, {
-   foreignKey: "product_id",
+	as: "bids",
+   	foreignKey: "product_id",
 	sourceKey: "id"
 });
 Bid.belongsTo(Product, {
+	as: "products",
    foreignKey: "product_id",
 	sourceKey: "id"
 });
 // link wishlist and user
 User.hasMany(Wishlist, {
-   foreignKey: "user_id",
+   	foreignKey: "user_id",
 	sourceKey: "id"
 });
 Wishlist.belongsTo(User, {

@@ -1,0 +1,136 @@
+.singleProduct{
+    padding-left: 170px;
+    padding-right: 171px;
+    height: 750px;
+    display: flex;
+    padding-top: 50px;
+}
+
+.main{
+    width: 470px;
+    height: 570px;
+    background-color: #ECECEC;
+    margin-right: 60px;
+    margin-bottom: 10px;
+    padding-top: 110px;
+    padding-bottom: 111px;
+    padding-left: 51px;
+    padding-right: 60;
+}
+
+.photo{
+    width: 359px;
+    height: 359px;
+}
+
+.pContainer{
+    width: 470px;
+    margin-left: -10px;
+    background-color: #9B9B9B;
+    padding: 0px;
+}
+
+.pRow{
+    width: 470px;
+    height: 110px;
+    margin-left: 1px;
+    display: contents;
+}
+
+.pCol{
+    width: 110px;
+    height: 110px;
+    display:contents;
+}
+
+.side{
+    width: 110px;
+    height: 110px;
+    margin-right: 10px;
+    background-color: #ECECEC;
+}
+
+.pDescription{
+    width: 600px;
+    height: 690px;
+}
+
+.pName{
+    font-size: 46px;
+    color: #252525;
+    letter-spacing: 1.61px;
+    margin-top: 5px;
+}
+
+.pPrice{
+    font-size: 24px;
+    color: #8367D8;
+    letter-spacing: 0.84px;
+    margin-bottom: 46px;
+    margin-top: 14px;
+}
+
+.bid{
+    display: flex;
+}
+
+.pPlaceholder{
+    background: #ECECEC;
+    border: 1px solid #D8D8D8;
+    width: 176px;
+    height: 56px;
+    margin-right: 20px;
+}
+
+.des{
+    font-size: 15px;
+    color: #9B9B9B;
+    letter-spacing: 0.52px;
+    line-height: 22px;
+    margin-bottom: 66px;
+}
+
+.bidInformation{
+    font-size: 16px;
+    color: #9B9B9B;
+    letter-spacing: 0.56px;
+    margin-bottom: 7px;
+}
+
+.buttonWatchlist{
+    margin-top: 45px;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    border: 3px solid #ECECEC;
+    color: black;
+}
+
+.buttonWatchlist:hover{
+    background-color: #8367D8;
+    border-color:#9B9B9B
+}
+
+.iconWatchlist{
+    color: #ECECEC;
+}
+
+.pDetails{
+    font-size: 18px;
+    color: #252525;
+    letter-spacing: 0.63px;
+    margin-top: 101px;
+}
+
+.hLine{
+    width: 600px;
+    border-width: 10px solid rgb(197, 192, 192);
+    opacity: 100%;
+}
+
+.pDescription{
+    font-size: 15px;
+    color: #252525;
+    letter-spacing: 0.53px;
+    line-height: 22px;
+}
+

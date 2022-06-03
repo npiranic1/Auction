@@ -1,0 +1,34 @@
+.bTable{
+    padding-left: 164px;
+    padding-right: 171px;
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: -internal-center;
+    
+}
+
+.tableHeader{
+    background: #F0F0F0;
+    height: 60px;
+    font-size: 18px;
+    color: #252525;
+    opacity: 100%;
+    letter-spacing: 0.63px;   
+    margin-left: 35x;
+}
+
+.tableBody{
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;  
+}
+
+.tableFill{
+    border-top-style: hidden;
+}
+
+.dummyP{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 35px;
+}

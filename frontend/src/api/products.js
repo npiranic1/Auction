@@ -13,4 +13,8 @@ export async function getLastChance(){
     return axios.get(BASE_URL + "/products/last-chance");
 }
 
+export async function getSingleProduct(id){
+    return axios.get(BASE_URL + "/products/single-product/" + id);
+}
+
 

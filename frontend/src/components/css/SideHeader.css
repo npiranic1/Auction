@@ -1,0 +1,29 @@
+.sideHeader{
+    background: #FAFAFA;
+    padding-left: 170px;
+    padding-right: 171px;
+    height: 60px;
+    display: flex;
+}
+
+.dashboard{
+    font-size: 18px;
+    color: #252525;
+    letter-spacing: 0.63px;
+    flex: left;
+    align-self: flex-end;
+    margin-right: 800px;
+}
+
+.breadCrumb{
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+    align-self: flex-end;
+    display: flex;
+}
+
+.pPage{
+    color: #252525;
+    opacity: 50%;
+}

@@ -1,0 +1,128 @@
+"use strict";
+const express = require("express");
+const { db, Bid, Product, User} = require('../config/db');
+const router = express.Router();
+const moment = require('moment');
+
+ 
+// GET method for bids
+router.get("/bids/:id", (req, res) => {
+    //const id = req.params.productId;
+    const id = req.params.id;
+    Bid.findAll({
+        where: {
+            product_id: id
+        },
+        include: [{
+            model: User
+        }],
+        order: [['date', 'DESC']]
+    }).then(bids => {
+        res.send(bids);
+    }).catch(err => {
+        res.status(500).send({
+            message: "error getting bids"
+        });
+    });   
+}); 
+
+// POST method for creating bid
+router.post("/bid/user/:userId/product/:productId", (req, res) => {
+   // id of the product needs to be taken from params
+    
+    const productId = req.params.productId;
+    Bid.count({
+        where: {
+            product_id: productId
+        },
+        include: [{
+            model: Product,
+            as: "products"
+        }]
+    }).then(count => {
+        if(count==0){
+            Product.findByPk(productId).then(product => {
+                 const currentDate = moment();
+                 // checking if the bidder is the seller of the product
+                 if(req.params.userId == product.user_id){
+                     res.status(500).send({
+                         message: "You can't bid the product you are selling!"
+                     });
+                 } else if(moment(product.end_date).isBefore(currentDate)){
+                     console.log("The auction has ended!");
+                     res.status(500).send({
+                         message: "The auction has ended!"
+                     });
+                 } else if(req.body.price <= product.price){
+                     console.log("uslov dva");
+                     res.status(500).send({
+                         message: "Price needs to be higher than: " + product.price
+                     });
+                 } else{    
+                     const bid = {
+                         price: req.body.price,
+                         product_id: req.params.productId,
+                         user_id: req.params.userId,
+                         date: currentDate
+                     };
+                     Bid.create(bid).then(bid => {
+                         res.send(bid);
+                     }).catch(err => {
+                         res.status(500).send({message: err});
+                     });
+                 }  
+            }).catch(err => {
+                 res.status(500).send(err);
+             });
+        } else{
+            Product.findByPk(productId, {
+                include: [{
+                    model: Bid,
+                    as: 'bids',
+                    attributes: [
+                     'id',
+                     'user_id',
+                     [db.Sequelize.fn('max', db.Sequelize.col('bids.price')), 'highest']
+                 ],
+                 group: ['id']
+                }]
+            }).then(product => {
+                 const highest = product.bids[0].dataValues.highest;
+                 const currentDate = moment();
+                 
+                 // checking if the bidder is the seller of the product
+                 if(req.paramsuserId == product.user_id){
+                     res.status(500).send({
+                         message: "You can't bid the product you are selling!"
+                     });
+                 } else if(moment(product.end_date).isBefore(currentDate)){
+                     res.status(500).send({
+                         message: "The auction has ended!"
+                     });
+                 } else if(req.body.price <= product.price || req.body.price<=highest){
+                     res.status(500).send({
+                         message: "Price needs to be higher than: " + highest
+                     });
+                 } else{    
+                     const bid = {
+                         price: req.body.price,
+                         product_id: req.params.productId,
+                         user_id: req.params.userId,
+                         date: currentDate
+                     };
+                     Bid.create(bid).then(bid => {
+                         res.send(bid);
+                     }).catch(err => {
+                         res.status(500).send({message: err});
+                     });
+                 }  
+            }).catch(err => {
+                 res.status(500).send(err);
+             });
+        }
+    }).catch(err => {
+        res.status(500).send(err);
+    }); 
+}); 
+
+module.exports = router;

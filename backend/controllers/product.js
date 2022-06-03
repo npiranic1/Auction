@@ -1,6 +1,6 @@
 "use strict";
 const express = require("express")
-const { Product, Image, Category } = require('../config/db')
+const { Product, Image } = require('../config/db')
 const Sequelize = require("sequelize");
 const router = express.Router()
 
@@ -74,5 +74,23 @@ router.get("/products/last-chance", (req, res) => {
                 });
             });
 });
+
+// GET method for single product
+router.get("/products/single-product/:id", (req, res) => {
+    const id = req.params.id;
+    Product.findByPk(id, {
+        include: [{
+            model: Image,
+            as: 'images',
+            attributes: ['id', 'url'],
+            group: 'id'
+        }]
+    }).then(product => {
+        res.send(product);
+    }).catch(err => {
+        res.status(500).send(err);
+    })
+    
+}); 
 
 module.exports = router;
