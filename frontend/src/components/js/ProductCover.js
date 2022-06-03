@@ -51,7 +51,6 @@ function ProductCover() {
                 <p className="name">{product.name}</p> 
                 <p className="price">Start from - ${product.price}</p> 
                 <p className="description">{product.description}</p>
-                {/*Button je zakomentarisan jer nema funkcionalnosti */}
                 <CustomButton caption="BID NOW" onClick={() => routeChange(product.id)}/> 
             </div>
             <div className="coverPhoto">
