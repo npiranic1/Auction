@@ -8,7 +8,7 @@ import { getRandomUser } from 'api/users.js'
 
 function SingleProduct({product, images, bids}) {
 
-    const [ bid, setBid ] = useState(0);
+    const [ bid, setBid ] = useState('');
     const [ user, setUser] = useState({});
     const [ message, setMessage ] = useState('');
 
@@ -32,9 +32,11 @@ function SingleProduct({product, images, bids}) {
         fetchUser();
     }, [])
 
-   async function handlePlaceBid(){
+   async function handlePlaceBid(e){
        try{
             const res = await placeBid(user.id, product.id, bid);
+            setMessage(res);
+            setBid('');
        }catch(err){
             console.log(err);
        }
@@ -56,14 +58,14 @@ function SingleProduct({product, images, bids}) {
             <p className="pName">{product.name}</p>
             <p className="pPrice">Star from - ${product.price}</p>
             <div className="bid">
-                {/* convert to int*/}
                 <input type='number' className="pPlaceholder" id="ph" value={bid} onChange={(e) => setBid(e.target.value)}/>
-                <CustomButton disabled={false} caption="PLACE BID" id="pb" onClick={handlePlaceBid}/>
+                <CustomButton disabled={false} caption="PLACE BID" id="pb" onClick={(e) => handlePlaceBid(e)}/>
             </div>
-            <p className="des" id="message" value={message}>Enter ${bids.length > 0 ? bids[0].price : product.price} or more</p>
+            <p className="message" id="message" value={message}>{message}</p>
+            <p className="des">Enter ${bids.length > 0 ? bids[0].price : product.price} or more</p>
             <p className="bidInformation">Highest bid: ${bids.length > 0 ? bids[0].price : "0"}</p>
             <p className="bidInformation">No bids: {bids.length}</p>
-            <p className="bidInformation">Time left: {product.timeLeft} days</p>
+            <p className="bidInformation">Time left: {product.timeLeft > 0 ? product.timeLeft : 0} days</p>
             {/*<Button className="buttonWatchlist">Watchlist <FavoriteIcon className="iconWatchlist"/></Button>*/}
             <p className="pDetails">Details</p>
             <hr className="hLine"/>

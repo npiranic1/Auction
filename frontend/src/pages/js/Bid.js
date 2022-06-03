@@ -44,7 +44,7 @@ function Bid() {
           } 
       }
       fetchProduct();
-  }, [location])
+  }, [product, images, bids, location])
 
   return (
     <div>

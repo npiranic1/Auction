@@ -7,7 +7,6 @@ const moment = require('moment');
  
 // GET method for bids
 router.get("/bids/:id", (req, res) => {
-    //const id = req.params.productId;
     const id = req.params.id;
     Bid.findAll({
         where: {
@@ -28,8 +27,6 @@ router.get("/bids/:id", (req, res) => {
 
 // POST method for creating bid
 router.post("/bid/user/:userId/product/:productId", (req, res) => {
-   // id of the product needs to be taken from params
-    
     const productId = req.params.productId;
     Bid.count({
         where: {
@@ -45,19 +42,11 @@ router.post("/bid/user/:userId/product/:productId", (req, res) => {
                  const currentDate = moment();
                  // checking if the bidder is the seller of the product
                  if(req.params.userId == product.user_id){
-                     res.status(500).send({
-                         message: "You can't bid the product you are selling!"
-                     });
+                     res.send("You can't bid the product you are selling!");
                  } else if(moment(product.end_date).isBefore(currentDate)){
-                     console.log("The auction has ended!");
-                     res.status(500).send({
-                         message: "The auction has ended!"
-                     });
+                     res.send("The auction has ended!")
                  } else if(req.body.price <= product.price){
-                     console.log("uslov dva");
-                     res.status(500).send({
-                         message: "Price needs to be higher than: " + product.price
-                     });
+                     res.send("Price needs to be higher than: $" + product.price + "!");
                  } else{    
                      const bid = {
                          price: req.body.price,
@@ -66,7 +55,7 @@ router.post("/bid/user/:userId/product/:productId", (req, res) => {
                          date: currentDate
                      };
                      Bid.create(bid).then(bid => {
-                         res.send(bid);
+                         res.send("");
                      }).catch(err => {
                          res.status(500).send({message: err});
                      });
@@ -92,17 +81,11 @@ router.post("/bid/user/:userId/product/:productId", (req, res) => {
                  
                  // checking if the bidder is the seller of the product
                  if(req.paramsuserId == product.user_id){
-                     res.status(500).send({
-                         message: "You can't bid the product you are selling!"
-                     });
+                     res.send("You can't bid the product you are selling!");
                  } else if(moment(product.end_date).isBefore(currentDate)){
-                     res.status(500).send({
-                         message: "The auction has ended!"
-                     });
+                     res.send("The auction has ended!");
                  } else if(req.body.price <= product.price || req.body.price<=highest){
-                     res.status(500).send({
-                         message: "Price needs to be higher than: " + highest
-                     });
+                     res.send("Price needs to be higher than: $" + highest + "!");
                  } else{    
                      const bid = {
                          price: req.body.price,
@@ -111,7 +94,7 @@ router.post("/bid/user/:userId/product/:productId", (req, res) => {
                          date: currentDate
                      };
                      Bid.create(bid).then(bid => {
-                         res.send(bid);
+                         res.send("");
                      }).catch(err => {
                          res.status(500).send({message: err});
                      });

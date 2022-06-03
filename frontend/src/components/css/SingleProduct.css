@@ -82,6 +82,15 @@
     margin-right: 20px;
 }
 
+.message{
+    font-size: 15px;
+    color: #e25959;
+    letter-spacing: 0.52px;
+    line-height: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .des{
     font-size: 15px;
     color: #9B9B9B;

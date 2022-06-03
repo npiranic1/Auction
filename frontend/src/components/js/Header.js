@@ -32,7 +32,7 @@ function Header() {
             <SearchBar placeholder="Try enter: Shoes" /> */ }
             
             <Text> <GavelIcon className="logoIcon"/> </Text>
-            <text className="logo">AUCTION</text>
+            <div className="logo">AUCTION</div>
           <Nav>
             <Link to="/" className="navLink">HOME</Link>
           </Nav>

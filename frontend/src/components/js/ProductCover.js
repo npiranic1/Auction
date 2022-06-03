@@ -39,8 +39,8 @@ function ProductCover() {
     function routeChange(id){
         let path = `home/single-product`; 
         history.push({
-        pathname: path,
-        state: { detail: id}
+            pathname: path,
+            state: { detail: id}
         });
     }
 
