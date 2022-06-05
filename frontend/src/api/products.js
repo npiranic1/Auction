@@ -14,8 +14,8 @@ export async function getLastChance(){
 }
 
 export async function getSingleProduct(id){
-    return axios.get(BASE_URL + "/products/single-product/" + id).
-        catch(function (error){
+    return axios.get(BASE_URL + "/products/single-product/" + id)
+        .catch(function (error){
             if (error.response) {
                 // The request was made and the server responded with a status code
                 // that falls out of the range of 2xx

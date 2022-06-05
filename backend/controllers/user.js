@@ -4,7 +4,7 @@ const { User } = require('../config/db')
 const Sequelize = require("sequelize");
 const router = express.Router()
 
-router.get("/user", (req, res) => {
+router.get("/user/random", (req, res) => {
     User.findAll({
         limit: 1,
         order: Sequelize.literal('rand()')

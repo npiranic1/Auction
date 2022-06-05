@@ -7,7 +7,7 @@ function BreadCrumbs({className}) {
   return (
     <div role="presentation" className={className} >
       <Breadcrumbs>
-        <Link underline="none" color="#252525" to="/" className="bcPage">
+        <Link className="bcPage" to="/" >
           HOME
         </Link>
         <Typography color="text.primary" className="dcTitle">SINGLE PRODUCT</Typography>

@@ -9,12 +9,5 @@ export async function getBids(id){
 export async function placeBid(userId, productId, bid){
     return (await axios.post(("" + BASE_URL + "/bid/user/" + userId + "/product/" + productId), {
         price: bid
-    })).data;/* .then(function (response) {
-        console.log(response.data);
-        return response.data;
-      })
-      .catch(function (error) {
-        return error;
-      }); */
-      // handle error
+    })).data;
 };

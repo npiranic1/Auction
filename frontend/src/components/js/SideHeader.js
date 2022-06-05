@@ -6,7 +6,6 @@ function SideHeader({dashboard, page}) {
   return (
     <div className="sideHeader">
         <p className="dashboard">{dashboard}</p>
-        {/* add class */}
         <BreadCrumbs className="breadCrumbs"/>
     </div>
   )

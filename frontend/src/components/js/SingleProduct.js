@@ -15,10 +15,10 @@ function SingleProduct({product, images, bids}) {
     useEffect(() => {
         const fetchUser= async () => {
             try{
-                const res = await getRandomUser();
+                const res = await getRandomUser(); 
                 setUser({
                     id: res.data[0].id
-                });   
+                });  
             } catch(err){
                 if(err.res){
                     console.log(err.res.data);
@@ -31,6 +31,7 @@ function SingleProduct({product, images, bids}) {
         }
         fetchUser();
     }, [])
+
 
    async function handlePlaceBid(e){
        try{
@@ -48,11 +49,15 @@ function SingleProduct({product, images, bids}) {
             <div className="main">
                 <img  className="photo" alt="Main" src={images.length > 0 ? images[0].url : ""}/>
             </div>
-                <Row className="pRow" >
+            <div className="side">
+                <Row className="pRow" > 
                     {images.slice(1).map(image => (
-                    <Col key={image.id} md={4} className="pCol"><img  alt={"Image: " + image.id} className="side" src={image.url}/></Col>
+                        <Col key={image.id} md={4} className="pCol"> 
+                            <div><img  alt={"Image: " + image.id} className="side" src={image.url}/></div>
+                        </Col> 
                     ))}  
-                </Row>      
+                </Row> 
+            </div>   
         </div>
         <div className="pDescription">
             <p className="pName">{product.name}</p>
@@ -61,7 +66,7 @@ function SingleProduct({product, images, bids}) {
                 <input type='number' className="pPlaceholder" id="ph" value={bid} onChange={(e) => setBid(e.target.value)}/>
                 <CustomButton disabled={false} caption="PLACE BID" id="pb" onClick={(e) => handlePlaceBid(e)}/>
             </div>
-            <p className="message" id="message" value={message}>{message}</p>
+            <p className="message" id="message">{message}</p>
             <p className="des">Enter ${bids.length > 0 ? bids[0].price : product.price} or more</p>
             <p className="bidInformation">Highest bid: ${bids.length > 0 ? bids[0].price : "0"}</p>
             <p className="bidInformation">No bids: {bids.length}</p>

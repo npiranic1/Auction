@@ -84,7 +84,7 @@ router.post("/bid/user/:userId/product/:productId", (req, res) => {
                      res.send("You can't bid the product you are selling!");
                  } else if(moment(product.end_date).isBefore(currentDate)){
                      res.send("The auction has ended!");
-                 } else if(req.body.price <= product.price || req.body.price<=highest){
+                 } else if(req.body.price<=highest){
                      res.send("Price needs to be higher than: $" + highest + "!");
                  } else{    
                      const bid = {
