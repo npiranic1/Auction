@@ -1,8 +1,8 @@
 .bcPage{
-    font-family: Lato-Light;
     font-size: 16px;
     color: #252525;
     letter-spacing: 0.56px;
+    font-weight: 300;
 }
 
 .bcPage:link { text-decoration: none; }

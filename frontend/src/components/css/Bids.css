@@ -23,10 +23,14 @@
     border-top-style: hidden;
 }
 
-.td {
+td {
     height: 50px;
     vertical-align:middle;
   }
+
+th{
+    vertical-align:middle;
+}
 
 .dummyP{
     width: 60px;
