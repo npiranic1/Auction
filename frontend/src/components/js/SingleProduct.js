@@ -6,7 +6,7 @@ import { placeBid } from 'api/bids.js'
 import { getRandomUser } from 'api/users.js'
 
 
-function SingleProduct({product, images, bids}) {
+function SingleProduct({product, images, bids, fetchProduct}) {
 
     const [ bid, setBid ] = useState('');
     const [ user, setUser] = useState({});
@@ -36,6 +36,7 @@ function SingleProduct({product, images, bids}) {
    async function handlePlaceBid(e){
        try{
             const res = await placeBid(user.id, product.id, bid);
+            fetchProduct();
             setMessage(res);
             setBid('');
        }catch(err){
