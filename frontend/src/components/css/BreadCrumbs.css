@@ -1,5 +1,5 @@
 .bcPage{
-    font-family: "Lato-Light";
+    font-family: Lato-Light;
     font-size: 16px;
     color: #252525;
     letter-spacing: 0.56px;
@@ -11,13 +11,12 @@
 .bcPage:visited { text-decoration: none; }
 
 
-.bcPage:hover { text-decoration: none; }
+.bcPage:hover { text-decoration: none; color: #252525; }
 
 
 .bcPage:active { text-decoration: none; }
 
 .dcTitle{
-    font-family: "Lato-Regular";
     font-size: 16px;
     color: #252525;
     letter-spacing: 0.56px;
