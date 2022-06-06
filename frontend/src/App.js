@@ -1,14 +1,17 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import './App.css';
-import Header from 'components/Header'
-import Home from 'pages/Home'
+import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Header from 'components/js/Header'
+import Routes from 'components/js/Routes'
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <Home />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes />
+      </div>
+    </Router>
   );
 }
 

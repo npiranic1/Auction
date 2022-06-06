@@ -1,7 +1,7 @@
 import React from 'react'
-import './Home.css'
-import ProductCover from 'components/ProductCover'
-import ProductContainer from 'components/ProductContainer'
+import 'pages/css/Home.css'
+import ProductCover from 'components/js/ProductCover'
+import ProductContainer from 'components/js/ProductContainer'
 import { useState, useEffect } from 'react';
 import { getNewArrivals, getLastChance } from 'api/products.js'
 import { Nav, Navbar } from 'react-bootstrap'

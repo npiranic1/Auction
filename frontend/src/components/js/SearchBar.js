@@ -1,5 +1,5 @@
 import React from 'react'
-import './SearchBar.css'
+import 'components/css/SearchBar.css'
 import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar({ placeholder, data }) {

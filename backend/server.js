@@ -6,6 +6,8 @@ const cors = require('cors');
 const {db} = require('./config/db');
 // import controllers 
 const product = require("./controllers/product");
+const bid = require("./controllers/bid");
+const user = require("./controllers/user");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const app = express();
@@ -16,6 +18,8 @@ app.use(bodyParser.json());
 app.use(cors());
 // routes
 app.use(product);
+app.use(bid);
+app.use(user);
 
 db.sync(() => console.log(`Tables created!`));
 

@@ -1,7 +1,10 @@
 import React from 'react'
-import './ProductCover.css'
-import { useState, useEffect } from 'react';
+import 'components/css/ProductCover.css'
+import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { getRandomProduct } from 'api/products.js'
+import CustomButton from 'components/js/CustomButton'
+
 
 function ProductCover() {
 
@@ -12,6 +15,7 @@ function ProductCover() {
             try{
                 const res = await getRandomProduct();
                 setProduct({
+                    id: res.data[0].id,
                     name: res.data[0].name,
                     price: res.data[0].price,
                     description: res.data[0].description,
@@ -30,6 +34,15 @@ function ProductCover() {
         fetchProduct();
     }, [])
 
+    const history = useHistory();
+
+    function routeChange(id){
+        let path = `home/single-product/` + id; 
+        history.push({
+            pathname: path
+        });
+    }
+
   return (
     <>
         <div className="productCover">
@@ -37,8 +50,7 @@ function ProductCover() {
                 <p className="name">{product.name}</p> 
                 <p className="price">Start from - ${product.price}</p> 
                 <p className="description">{product.description}</p>
-                {/*Button je zakomentarisan jer nema funkcionalnosti */}
-                {/*<CustomButton/> */}
+                <CustomButton caption="BID NOW" onClick={() => routeChange(product.id)}/> 
             </div>
             <div className="coverPhoto">
                 <img  alt="coverPhoto" src={product.url} className="coverPhoto"/>

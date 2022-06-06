@@ -1,12 +1,7 @@
 import React from 'react'
-import './ProductDetail.css'
-import PropTypes from 'prop-types'
+import 'components/css/ProductDetail.css'
 
 function ProductDetail({product}) {
-    
-    ProductDetail.propTypes = {
-        product: PropTypes.object
-    }
 
   return (
     <div className="productDetail">
@@ -14,7 +9,6 @@ function ProductDetail({product}) {
             <img alt="cover" src={product.url} className="cover"/>
         </div>
         <div className="productDetails">
-           
             <p className="productCategory">{product.name}</p> <br/>
             <p className="productPrice">Start from ${product.price}</p> 
         </div>

@@ -6,7 +6,6 @@
     border: 1px;
     border-color: black;
     font-size: 19px;
-    background-color: #cfc3f4;
 }
 
 .NavBarDark{
@@ -16,6 +15,22 @@
     position: fixed;
 }
 
+.navLink{
+    font-size: 16px;
+    color: #252525;
+    opacity: 100%;
+    letter-spacing: 0.56px;
+    margin-left: 980px;
+}
+
+.navLink:link{
+    text-decoration: none;
+}
+
+.navLink:hover{
+    text-decoration: none;
+}
+
 .navBarIcon{
     color: gray;
     width: 25px;
@@ -23,8 +38,8 @@
 }
 
 .logoIcon{
-    width: "15px";
-    height: "15px";
+    width: 15px;
+    height: 15px;
     color: #8367D8;
 }
 

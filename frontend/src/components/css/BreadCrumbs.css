@@ -1,0 +1,23 @@
+.bcPage{
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+    font-weight: 300;
+}
+
+.bcPage:link { text-decoration: none; }
+
+
+.bcPage:visited { text-decoration: none; }
+
+
+.bcPage:hover { text-decoration: none; color: #252525; }
+
+
+.bcPage:active { text-decoration: none; }
+
+.dcTitle{
+    font-size: 16px;
+    color: #252525;
+    letter-spacing: 0.56px;
+}

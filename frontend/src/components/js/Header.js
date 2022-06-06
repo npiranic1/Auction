@@ -1,12 +1,14 @@
 import 'App.css';
 import { Nav, Navbar } from 'react-bootstrap';
-import './Header.css';
+import 'components/css/Header.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import GavelIcon from '@mui/icons-material/Gavel';
 import Text from 'react-text';
+import {Link, withRouter} from 'react-router-dom'
+
 
 function Header() {
   return (
@@ -26,21 +28,17 @@ function Header() {
         </Nav.Link>
       </Navbar>
       <Navbar className="NavBar">
-           {/* <Navbar.Brand className="NavBar">
-            
-  </Navbar.Brand> 
-  <SearchBar placeholder="Try enter: Shoes" /> */ }
+           {/* 
+            <SearchBar placeholder="Try enter: Shoes" /> */ }
             
             <Text> <GavelIcon className="logoIcon"/> </Text>
-            <text className="logo">AUCTION</text>
+            <div className="logo">AUCTION</div>
           <Nav>
-            <Nav.Link to="/home">HOME</Nav.Link>
-            {/* <Nav.Link href="shop">SHOP</Nav.Link>
-            <Nav.Link href="myAccout">MY ACCOUNT</Nav.Link> */} 
+            <Link to="/" className="navLink">HOME</Link>
           </Nav>
       </Navbar>
-    </>
+      </>
   );
 }
 
-export default Header;
+export default withRouter(Header);
