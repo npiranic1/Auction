@@ -11,6 +11,7 @@ const user = require("./controllers/user");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const app = express();
+// defines where static files are going to be served from
 app.use(express.static(path.join(__dirname, "public")));
 app.use(urlencodedParser);
 app.use(bodyParser.json());
@@ -23,5 +24,5 @@ app.use(user);
 
 db.sync(() => console.log(`Tables created!`));
 
-const PORT = process.env.PORT || 3030;
-app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
+const port = process.env.PORT || 3030;
+app.listen(port, () => console.log(`Server is running on PORT: ${port}`));
