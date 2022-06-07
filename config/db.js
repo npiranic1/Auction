@@ -3,6 +3,7 @@ const Sequelize = require("sequelize");
 const db = new Sequelize("heroku_7c79085b94bb9f3", "bf9b0019a4f700", "80200ad9", {
    host: "eu-cdbr-west-02.cleardb.net",
    dialect: "mysql",
+   port: "3306",
    logging: console.log
 });
 
