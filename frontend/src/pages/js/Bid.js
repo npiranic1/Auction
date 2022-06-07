@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import 'pages/css/Bid.css'
 import { useState, useEffect } from 'react'
 import SideHeader from 'components/js/SideHeader.js'
@@ -15,7 +15,7 @@ function Bid() {
   const [ bids, setBids ] = useState([]);
   const { id } = useParams();
  
-  const fetchProduct = async () => {
+  const fetchProduct = useCallback(async () => {
     try{
         const resP = await getSingleProduct(id);
         const resB = await getBids(id);
@@ -28,8 +28,7 @@ function Bid() {
             timeLeft: moment(resP.data.end_date).diff(moment(), 'days')
         });
         setImages(resP.data.images.map(imageUrl => ({ id: imageUrl.id, url: imageUrl.url })));
-        setBids(resB.data.map(bid => ({id: bid.id, date: bid.date !== "" ? bid.date : "", price: bid.price !== null ? bid.price : null, name: bid.user.first_name + " " + bid.user.last_name, image: bid.user.image_url})));
-          
+        setBids(resB.data.map(bid => ({id: bid.id, date: bid.date !== "" ? bid.date : "", price: bid.price !== null ? bid.price : null, name: bid.user.first_name + " " + bid.user.last_name, image: bid.user.image_url})));     
     } catch(err){
         if(err.res){
             console.log(err.res.data);
@@ -39,11 +38,12 @@ function Bid() {
             console.log(`Error: ${err.message}`);
         }   
     } 
-}
+  }, [id]);
+  
 
   useEffect(() => {
       fetchProduct();
-  })
+  }, [id,fetchProduct]);
 
   return (
     <div>
