@@ -6,7 +6,7 @@ const db = new Sequelize("auction", "root", "auctionpass", {
    logging: console.log
 });
 
-db.authenticate().then(()=> {
+db.authenticate(process.env.CLEARDB_DATABASE_URL).then(()=> {
    console.log('Connection has been established successfully.');
 }).catch(err => {
    console.log('error:' + err);
