@@ -1,1 +1,2 @@
 mysql://bf9b0019a4f700:80200ad9@eu-cdbr-west-02.cleardb.net/heroku_7c79085b94bb9f3?reconnect=true
+JAWSDB_URL=mysql://azb19kla0exiviec:n35rj34ag4vbc6jc@nuepp3ddzwtnggom.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/kpzefakfqgvgd8vj

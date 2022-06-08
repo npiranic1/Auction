@@ -1,18 +1,13 @@
 const Sequelize = require("sequelize");
-
-const db = new Sequelize("heroku_7c79085b94bb9f3", "bf9b0019a4f700", "80200ad9", {
-   host: "eu-cdbr-west-02.cleardb.net",
+const dotenv = require("dotenv")
+// access to .env var
+dotenv.config()
+const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
+   host: process.env.HOST,
    dialect: "mysql",
    port: "3306",
    logging: console.log
 }); 
-
-/*const db = new Sequelize("auction", "root", "auctionpass", {
-   host: "localhost",
-   dialect: "mysql",
-   port: "3306",
-   logging: console.log
-}); */
 
 db.authenticate().then(()=> {
    console.log('Connection has been established successfully.');
