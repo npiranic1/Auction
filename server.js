@@ -22,6 +22,10 @@ app.use(product);
 app.use(bid);
 app.use(user);
 
+app.get('*', (req, res) => {
+    res.send("Uspješan deploy");
+ });
+
 db.sync(() => console.log(`Tables created!`));
 
 const port = process.env.PORT || 3030;
