@@ -1,21 +1,20 @@
 const Sequelize = require("sequelize");
 
-/* const db = new Sequelize("heroku_7c79085b94bb9f3", "bf9b0019a4f700", "80200ad9", {
+const db = new Sequelize("heroku_7c79085b94bb9f3", "bf9b0019a4f700", "80200ad9", {
    host: "eu-cdbr-west-02.cleardb.net",
+   dialect: "mysql",
+   port: "3306",
+   logging: console.log
+}); 
+
+/*const db = new Sequelize("auction", "root", "auctionpass", {
+   host: "localhost",
    dialect: "mysql",
    port: "3306",
    logging: console.log
 }); */
 
-
-const db = new Sequelize("auction", "root", "auctionpass", {
-   host: "localhost",
-   dialect: "mysql",
-   port: "3306",
-   logging: console.log
-});
-
-db.authenticate(process.env.CLEARDB_DATABASE_URL).then(()=> {
+db.authenticate().then(()=> {
    console.log('Connection has been established successfully.');
 }).catch(err => {
    console.log('error:' + err);
