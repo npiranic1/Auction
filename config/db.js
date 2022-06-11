@@ -1,7 +1,10 @@
 const Sequelize = require("sequelize");
+const dotenv = require("dotenv")
+// access to .env variables
+dotenv.config()
 
-const db = new Sequelize("auction", "root", "auctionpass", {
-   host: "localhost",
+const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
+   host: process.env.HOST,
    dialect: "mysql",
    logging: console.log
 });
