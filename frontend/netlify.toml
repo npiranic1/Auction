@@ -1,0 +1,8 @@
+[build]
+  command = "CI='' npm run build"
+  publish = "build"
+  base = "frontend"
+  ignore = "/bin/false"
+
+[build.environment]
+  REACT_APP_URL = "https://auction-web-application.herokuapp.com"
