@@ -35,11 +35,13 @@
     text-align: center;
     display: inline-block;
     padding: 0%;
+    color: white;
 }
 
 .login-registration-button:hover{
     background-color: #252525;
     border-width: 0;
+    color: white;
 }
 
 .login-registration-button:link{
