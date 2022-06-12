@@ -1,5 +1,5 @@
 import 'App.css';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 import 'components/css/Header.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -26,6 +26,12 @@ function Header() {
         <Nav.Link href="https://www.google.com/">
           <GoogleIcon className="navBarIcon" />
         </Nav.Link>
+
+        <div className="login-registration-buttons-wrapper">
+          <Button variant="dark" className="login-registration-button" href="/login">Login</Button>
+          <div className="or-parapraph"> or </div>
+          <Button variant="dark" className="login-registration-button" href="/registration">Create an Account</Button>
+        </div>
       </Navbar>
       <Navbar className="NavBar">
            {/* 
