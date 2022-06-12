@@ -1,6 +1,6 @@
 [build]
   command = "CI='' npm run build"
-  publish = "build"
+  publish = "frontend/build"
   base = "frontend"
   ignore = "/bin/false"
 
