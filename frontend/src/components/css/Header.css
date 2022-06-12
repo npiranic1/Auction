@@ -14,6 +14,7 @@
     height: 40px;
     position: fixed;
 }
+
 .login-registration-buttons-wrapper{
     font-size: 14px;
     letter-spacing: 0.49px;
@@ -39,6 +40,11 @@
 .login-registration-button:hover{
     background-color: #252525;
     border-width: 0;
+}
+
+.login-registration-button:link{
+    text-decoration: none;
+    color: white;
 }
 
 .or-parapraph{

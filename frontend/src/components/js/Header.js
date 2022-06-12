@@ -28,9 +28,9 @@ function Header() {
         </Nav.Link>
 
         <div className="login-registration-buttons-wrapper">
-          <Button variant="dark" className="login-registration-button" href="/login">Login</Button>
+          <Link variant="dark" className="login-registration-button" to="/login">Login</Link>
           <div className="or-parapraph"> or </div>
-          <Button variant="dark" className="login-registration-button" href="/registration">Create an Account</Button>
+          <Link variant="dark" className="login-registration-button" to="/registration">Create an Account</Link>
         </div>
       </Navbar>
       <Navbar className="NavBar">
