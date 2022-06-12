@@ -37,7 +37,7 @@ function Registration() {
                         </Form.Group>
                         <Button className="register-form-register-button">REGISTER</Button>
                         <div className="register-direct-to-login">
-                          <p>Already have an account? </p>
+                          <p className="register-direct-to-login-text">Already have an account? </p>
                           <Link className="register-direct-to-login-button" to="/login">Login</Link>
                         </div>
                     </Form>
