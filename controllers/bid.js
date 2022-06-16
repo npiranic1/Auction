@@ -3,9 +3,8 @@ const express = require("express");
 const { db, Bid, Product, User} = require('../config/db');
 const router = express.Router();
 const moment = require('moment');
-const jwt= require("jsonwebtoken");
 const authentificateToken = require("../authentification/auth.js")
- 
+
 // GET method for bids
 router.get("/bids/:id", (req, res) => {
     const id = req.params.id;
