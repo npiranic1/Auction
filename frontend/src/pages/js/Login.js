@@ -6,8 +6,6 @@ import { loginUser } from 'api/users';
 import { setSession } from 'utility/storageService.js'
 import { useHistory } from 'react-router-dom'
 
-
-
 function Login({setIsLoggedIn}) {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');

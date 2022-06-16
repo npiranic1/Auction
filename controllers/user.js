@@ -35,7 +35,6 @@ router.post("/user/register", (req, res) => {
             let token = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET);
             res.json({user: payload, accessToken: token});
         }).catch(err => {
-            console.log("Error creating user");
             res.send({
                 message: err
             })

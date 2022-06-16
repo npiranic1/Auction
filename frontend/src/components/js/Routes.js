@@ -6,8 +6,6 @@ import Login from 'pages/js/Login'
 import Registration from 'pages/js/Registration'
 
 function Routes({setIsLoggedIn}) {
-
-
   return (
     <Switch>
         <Route exact path="/" component={Home}/>
