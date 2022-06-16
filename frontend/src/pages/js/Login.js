@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'pages/css/Login.css'
 import { Form, Button } from 'react-bootstrap'
 import SideHeader from 'components/js/SideHeader'
+import { loginUser } from 'api/users';
+import { setSession } from 'utility/storageService.js'
+import { useHistory } from 'react-router-dom'
 
-function Login() {
+
+
+function Login({setIsLoggedIn}) {
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+    const [ message, setMessage ] = useState('');
+    const history = useHistory();
+
+    async function handleLogin(){
+        try{
+            if(email !=='' && password !== ''){
+                const res = await loginUser(email, password);
+                if(res == null) setMessage("Invalid password");
+                if(res){
+                    setIsLoggedIn(true);
+                    setSession(res);
+                    let path = `/`; 
+                    history.push({
+                        pathname: path
+                    });
+                } else setMessage("Invalid credentials");
+                
+            } else setMessage("You didn't input all values!");
+        }catch(err){
+            console.log(err);
+        }
+    }
+
   return (
     <>
         <div>
@@ -20,14 +50,14 @@ function Login() {
                     <Form className="login-form">
                         <Form.Group controlId="form.Name">
                             <Form.Label className="login-form-label">Enter Email</Form.Label>
-                            <Form.Control type="email" placeholder="" className="login-form-control" />
+                            <Form.Control type="email" placeholder="" className="login-form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
                         <Form.Group controlId="form.Email">
                             <Form.Label className="login-form-label">Password</Form.Label>
-                            <Form.Control type="password" placeholder="" className="login-form-control"/>
+                            <Form.Control type="password" placeholder="" className="login-form-control" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </Form.Group>
-                        <Form.Check className="login-form-check" label='Remember me'/>
-                        <Button className="login-form-login-button">LOGIN</Button>
+                        <p className="login-message">{message}</p>
+                        <Button className="login-form-login-button" onClick={() => handleLogin()}>LOGIN</Button>
                     </Form>
                 </div>
             </div>

@@ -20,4 +20,11 @@
 .buttonText{
     height: 22px;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-icon{
+    margin-left: 10px;
 }

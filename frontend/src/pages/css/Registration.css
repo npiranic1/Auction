@@ -16,6 +16,9 @@
     width: 700px;
     height: 60px;
     background: #FAFAFA;  
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .register-title{
@@ -65,13 +68,20 @@
     border: none;
 }
 
+.register-message{
+    font-size: 15px;
+    color: #e25959;
+    margin-top: 10px;
+}
+
 .register-direct-to-login{
     margin-top: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .register-direct-to-login-text{
-    margin-left: 160px;
     margin-right: 10px;
     font-size: 18px;
     color: #9B9B9B;
@@ -85,6 +95,7 @@
     font-size: 18px;
     letter-spacing: 0.63px;
     font-weight: 400;
+    margin-left: 10px;
 }
 
 .register-direct-to-login-button:hover{

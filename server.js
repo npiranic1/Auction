@@ -14,6 +14,7 @@ const app = express();
 // defines where static files are going to be served from
 app.use(express.static(path.join(__dirname, "public")));
 app.use(urlencodedParser);
+app.use(express.json());
 app.use(bodyParser.json());
 // for communication beetween servers
 app.use(cors());

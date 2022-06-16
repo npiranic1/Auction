@@ -15,7 +15,10 @@
 .login-title-wrapper{
     width: 700px;
     height: 60px;
-    background: #FAFAFA;  
+    background: #FAFAFA; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .login-title{
@@ -41,6 +44,12 @@
 .login-form-control{
     width: 600px;
     height: 54px;
+}
+
+.login-message{
+    font-size: 15px;
+    color: #e25959;
+    margin-top: 10px;
 }
 
 .login-form-check{

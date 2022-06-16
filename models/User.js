@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       username: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true
       },
       email: {
@@ -32,18 +32,22 @@ module.exports = (sequelize, DataTypes) => {
         type: Sequelize.STRING,
         allowNull: false
       },
+      salt: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       gender: {
           type: Sequelize.ENUM('male', 'female'),
-          allowNull: false
+          allowNull: true
       },
       phone_number: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
           unique: true
       },
       residence_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'residence',
           key: 'id',
@@ -59,5 +63,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     { freezeTableName: true }
   );
+/* 
+  // password encryption
+  User.beforeCreate((user, options) => {
+    const salt = bcrypt.genSaltSync();
+    user.password = bcrypt.hashSync(user.password, salt);
+    user.salt = salt;
+  });
+
+  // password validation
+  User.prototype.validPassword = function(password){
+    return bcrypt .compareSync(password, this.password);
+  };*/
+
   return User;
 };
+

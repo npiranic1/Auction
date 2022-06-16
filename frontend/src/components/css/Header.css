@@ -21,6 +21,7 @@
     color: white;
     margin-left: 765px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -45,6 +46,30 @@
 }
 
 .login-registration-button:link{
+    text-decoration: none;
+    color: white;
+}
+
+.logout-button{
+    font-size: 14px;
+    border: none;
+    border-width: 0;
+    width: max-content;
+    height: 17px;
+    background: #252525;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    margin-left: 905px;
+}
+
+.logout-button:hover{
+    background-color: #252525;
+    border-width: 0;
+    color: white;
+}
+
+.logout-button:link{
     text-decoration: none;
     color: white;
 }
