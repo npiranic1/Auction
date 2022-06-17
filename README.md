@@ -15,3 +15,6 @@ Before starting up the application you need to install dependencies. Run command
 In the root folder of the application run "node server.js" to startup server. Open new terminal, checkout to frontend directory using "cd frontend" and run "npm start" to startup client server.
 
 # Deployed application link
+
+server - https://auction-web-application.herokuapp.com/
+client - https://auction-web-application.netlify.app/
