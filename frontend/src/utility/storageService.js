@@ -8,7 +8,11 @@ export const clearSession = () => {
 };
 
 export const getUser = () => {
-    return window.localStorage.getItem("user")
+    return localStorage.getItem("user")
+}
+
+export const getToken = () => {
+    return localStorage.getItem("token")
 }
 
 

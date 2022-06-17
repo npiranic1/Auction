@@ -20,10 +20,7 @@ function Login({setIsLoggedIn}) {
                 if(res){
                     setIsLoggedIn(true);
                     setSession(res);
-                    let path = `/`; 
-                    history.push({
-                        pathname: path
-                    });
+                    history.push("/");
                 } else setMessage("Invalid credentials");
                 
             } else setMessage("You didn't input all values!");

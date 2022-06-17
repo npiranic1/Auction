@@ -1,5 +1,5 @@
 import axios from 'axios';
-import BASE_URL from './config';
+import {BASE_URL, getHeaders } from './config';
 
 export async function registerUser(firstName, lastName, email, password){
     return (await axios.post(BASE_URL + "/user/register", {
@@ -7,12 +7,12 @@ export async function registerUser(firstName, lastName, email, password){
         last_name: lastName,
         email: email,
         password: password
-    })).data;
+    }, getHeaders())).data;
 }
 
 export async function loginUser(email, password){
     return (await axios.post(BASE_URL + "/user/login", {
         email: email,
         password: password
-    })).data;
+    }, getHeaders())).data;
 }

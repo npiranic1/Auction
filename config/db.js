@@ -8,11 +8,6 @@ const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PAS
    dialect: "mysql",
    logging: console.log
 }); 
-/*
-const db = new Sequelize("auction", "root", "auctionpass", {
-	host: "localhost",
-	dialect: "mysql"
-});*/
 
 db.authenticate().then(()=> {
    console.log('Connection has been established successfully.');

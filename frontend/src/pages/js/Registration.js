@@ -20,13 +20,9 @@ function Registration({setIsLoggedIn}) {
         try{
             if(name !== '' && surname !== '' && email !=='' && password !== ''){
                 const res = await registerUser(name, surname, email, password);
-                console.log(res);
                 setIsLoggedIn(true);
                 setSession(res);
-                let path = `/`; 
-                history.push({
-                    pathname: path
-                });
+                history.push("/");
             } else {
                 setMessage("You didn't input all values!");
             }
