@@ -50,7 +50,6 @@ router.get("/products/new-arrivals", (req, res) => {
 
 // GET method for last chance
 
-// ograničiti end_date u budućnosti
 router.get("/products/last-chance", (req, res) => {
     Product.findAll({
         limit: 8,

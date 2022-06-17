@@ -6,7 +6,7 @@ function SideHeader({dashboard, page}) {
   return (
     <div className="sideHeader">
         <p className="dashboard">{dashboard}</p>
-        <BreadCrumbs className="breadCrumbs"/>
+        {page!="" ? <BreadCrumbs className="breadCrumbs" page={page} dashboard={dashboard}/> : ""}
     </div>
   )
 }

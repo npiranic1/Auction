@@ -15,6 +15,72 @@
     position: fixed;
 }
 
+.login-registration-buttons-wrapper{
+    font-size: 14px;
+    letter-spacing: 0.49px;
+    color: white;
+    margin-left: 765px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-registration-button{
+    font-size: 14px;
+    border: none;
+    border-width: 0;
+    width:max-content;
+    height: 17px;
+    margin-left: 5px;
+    background: #252525;
+    text-align: center;
+    display: inline-block;
+    padding: 0;
+    color: white;
+}
+
+.login-registration-button:hover{
+    background-color: #252525;
+    border-width: 0;
+    color: white;
+}
+
+.login-registration-button:link{
+    text-decoration: none;
+    color: white;
+}
+
+.logout-button{
+    font-size: 14px;
+    border: none;
+    border-width: 0;
+    width: max-content;
+    height: 17px;
+    background: #252525;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    margin-left: 905px;
+}
+
+.logout-button:hover{
+    background-color: #252525;
+    border-width: 0;
+    color: white;
+}
+
+.logout-button:link{
+    text-decoration: none;
+    color: white;
+}
+
+.or-parapraph{
+    font-size: 14px;
+    color: #9B9B9B;
+    letter-spacing: 0.49px; 
+    margin-left: 10px;
+}
+
 .navLink{
     font-size: 16px;
     color: #252525;

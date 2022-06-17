@@ -1,46 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import 'components/css/SingleProduct.css'
 import CustomButton from 'components/js/CustomButton.js'
 import { Row, Col } from 'react-bootstrap'
 import { placeBid } from 'api/bids.js'
-import { getRandomUser } from 'api/users.js'
-
 
 function SingleProduct({product, images, bids, fetchProduct}) {
 
     const [ bid, setBid ] = useState('');
-    const [ user, setUser] = useState({});
     const [ message, setMessage ] = useState('');
-
-    useEffect(() => {
-        const fetchUser= async () => {
-            try{
-                const res = await getRandomUser(); 
-                setUser({
-                    id: res.data[0].id
-                });  
-            } catch(err){
-                if(err.res){
-                    console.log(err.res.data);
-                    console.log(err.res.status);
-                    console.log(err.res.headers);
-                } else{
-                    console.log(`Error: ${err.message}`);
-                }   
-            } 
-        }
-        fetchUser();
-    }, [])
-
 
    async function handlePlaceBid(e){
        try{
-            const res = await placeBid(user.id, product.id, bid);
+            const res = await placeBid(product.id, bid);
             fetchProduct();
             setMessage(res);
             setBid('');
        }catch(err){
-            console.log(err);
+            setMessage("You need to be logged in!");
        }
     }; 
 

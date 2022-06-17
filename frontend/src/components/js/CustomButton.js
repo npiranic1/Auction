@@ -6,7 +6,7 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 function CustomButton({caption, onClick}) {
   return (  
     <Button className="buttonReact" onClick={onClick}>
-        <div className="buttonText">{caption}<ArrowForwardIosSharpIcon className="buttonText"/></div>  
+        <div className="buttonText">{caption}<ArrowForwardIosSharpIcon fontSize='small' className="button-icon"/></div>  
     </Button>
   );
 }

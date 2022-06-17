@@ -4,14 +4,14 @@ import Breadcrumbs from '@mui/material/Breadcrumbs'
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom'
 
-function BreadCrumbs({className}) {
+function BreadCrumbs({className, page, dashboard}) {
   return (
     <div role="presentation" className={className} >
       <Breadcrumbs>
         <Link className="bcPage" to="/" >
-          HOME
+          {page}
         </Link>
-        <Typography color="text.primary" className="dcTitle">SINGLE PRODUCT</Typography>
+        <Typography color="text.primary" className="dcTitle">{dashboard}</Typography>
       </Breadcrumbs>
     </div>
   )
