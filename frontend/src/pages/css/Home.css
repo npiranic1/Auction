@@ -13,6 +13,7 @@
 }
 
 .navBar{
+    margin-top: 56px;
     padding-left: 170px;
     padding-right: 171px;
 }
@@ -21,5 +22,5 @@
     border-width: 3px;
     border-color: #ECECEC;
     width: 1440px;
-    margin-top: -3px;
+    margin-top: -6px;
 } 
