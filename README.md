@@ -1,4 +1,4 @@
-# Auction
+# Auction web application
 
 This is a code repository for Auction web application.
 
