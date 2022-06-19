@@ -7,7 +7,7 @@ const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PAS
    host: process.env.HOST,
    dialect: "mysql",
    logging: console.log
-}); 
+});  
 
 db.authenticate().then(()=> {
    console.log('Connection has been established successfully.');
