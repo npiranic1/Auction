@@ -5,11 +5,11 @@
     height: 80px;
     border: 1px;
     border-color: black;
-    font-size: 19px;
+    font-size: 19px;  
 }
 
 .NavBarDark{
-    padding-left: 164px;
+    padding-left: 155px;
     padding-right: 171px;
     height: 40px;
     position: fixed;
