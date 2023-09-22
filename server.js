@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require('path');
-const cors = require('cors');
+const path = require("path");
+const cors = require("cors");
 
-const {db} = require('./config/db');
-// import controllers 
+const { db } = require("./config/db");
+// import controllers
 const product = require("./controllers/product");
 const bid = require("./controllers/bid");
 const user = require("./controllers/user");
@@ -23,9 +23,9 @@ app.use(product);
 app.use(bid);
 app.use(user);
 
-app.get('*', (req, res) => {
-    res.send("Uspješan deploy");
- });
+app.get("*", (req, res) => {
+  res.send("Uspješan deploy");
+});
 
 db.sync(() => console.log(`Tables created!`));
 

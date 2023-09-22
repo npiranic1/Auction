@@ -1,146 +1,145 @@
-.singleProduct{
-    padding-left: 170px;
-    padding-right: 171px;
-    height: 750px;
-    display: flex;
-    padding-top: 50px;
+.singleProduct {
+  height: 750px;
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
-.main{
-    width: 470px;
-    height: 570px;
-    background-color: #ECECEC;
-    margin-right: 60px;
-    margin-bottom: 10px;
-    padding: 110px 60px 111px 51px;
+.main {
+  width: 470px;
+  height: 570px;
+  background-color: #ececec;
+  margin-right: 60px;
+  margin-bottom: 10px;
+  padding: 110px 60px 111px 51px;
 }
 
-.photo{
-    width: 359px;
-    height: 359px;
+.photo {
+  width: 359px;
+  height: 359px;
 }
 
-.pContainer{
-    width: 470px;
-    margin-left: -10px;
-    background-color: #9B9B9B;
-    padding: 0;
+.pContainer {
+  width: 470px;
+  margin-left: -10px;
+  background-color: #9b9b9b;
+  padding: 0;
 }
 
-.pRow{
-    width: 470px;
-    height: 110px;
-    margin-left: 1px;
-    display: flex;
-    flex-direction: column;
+.pRow {
+  width: 470px;
+  height: 110px;
+  margin-left: 1px;
+  display: flex;
+  flex-direction: column;
 }
 
-.pCol{
-    width: 110px;
-    height: 110px;
-    display:contents;
+.pCol {
+  width: 110px;
+  height: 110px;
+  display: contents;
 }
 
-.side{
-    width: 110px;
-    height: 110px;
-    margin-right: 10px;
-    background-color: #ECECEC;
-    display: flex;
+.side {
+  width: 110px;
+  height: 110px;
+  margin-right: 10px;
+  background-color: #ececec;
+  display: flex;
 }
 
-.pDescription{
-    width: 600px;
-    height: 690px;
+.pDescription {
+  width: 600px;
+  height: 690px;
 }
 
-.pName{
-    font-size: 46px;
-    color: #252525;
-    letter-spacing: 1.61px;
-    margin-top: 5px;
+.pName {
+  font-size: 46px;
+  color: #252525;
+  letter-spacing: 1.61px;
+  margin-top: 5px;
 }
 
-.pPrice{
-    font-size: 24px;
-    color: #8367D8;
-    letter-spacing: 0.84px;
-    margin-bottom: 46px;
-    margin-top: 14px;
+.pPrice {
+  font-size: 24px;
+  color: #8367d8;
+  letter-spacing: 0.84px;
+  margin-bottom: 46px;
+  margin-top: 14px;
 }
 
-.bid{
-    display: flex;
+.bid {
+  display: flex;
 }
 
-.pPlaceholder{
-    background: #ECECEC;
-    border: 1px solid #D8D8D8;
-    width: 176px;
-    height: 56px;
-    margin-right: 20px;
+.pPlaceholder {
+  background: #ececec;
+  border: 1px solid #d8d8d8;
+  width: 176px;
+  height: 56px;
+  margin-right: 20px;
 }
 
-.message{
-    font-size: 15px;
-    color: #e25959;
-    letter-spacing: 0.52px;
-    line-height: 22px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.message {
+  font-size: 15px;
+  color: #e25959;
+  letter-spacing: 0.52px;
+  line-height: 22px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.des{
-    font-size: 15px;
-    color: #9B9B9B;
-    letter-spacing: 0.52px;
-    line-height: 22px;
-    margin-bottom: 66px;
+.des {
+  font-size: 15px;
+  color: #9b9b9b;
+  letter-spacing: 0.52px;
+  line-height: 22px;
+  margin-bottom: 66px;
 }
 
-.bidInformation{
-    font-size: 16px;
-    color: #9B9B9B;
-    letter-spacing: 0.56px;
-    margin-bottom: 7px;
+.bidInformation {
+  font-size: 16px;
+  color: #9b9b9b;
+  letter-spacing: 0.56px;
+  margin-bottom: 7px;
 }
 
-.buttonWatchlist{
-    margin-top: 45px;
-    margin-bottom: 20px;
-    background: #FFFFFF;
-    border: 3px solid #ECECEC;
-    color: black;
+.buttonWatchlist {
+  margin-top: 45px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 3px solid #ececec;
+  color: black;
 }
 
-.buttonWatchlist:hover{
-    background-color: #8367D8;
-    border-color:#9B9B9B
+.buttonWatchlist:hover {
+  background-color: #8367d8;
+  border-color: #9b9b9b;
 }
 
-.iconWatchlist{
-    color: #ECECEC;
+.iconWatchlist {
+  color: #ececec;
 }
 
-.pDetails{
-    font-size: 18px;
-    color: #252525;
-    letter-spacing: 0.63px;
-    margin-top: 101px;
+.pDetails {
+  font-size: 18px;
+  color: #252525;
+  letter-spacing: 0.63px;
+  margin-top: 101px;
 }
 
-.hLine{
-    width: 600px;
-    border: 2px solid #ECECEC;
-    border-radius: 25px;
-    opacity: 100%;
-    background: #ECECEC;
+.hLine {
+  width: 600px;
+  border: 2px solid #ececec;
+  border-radius: 25px;
+  opacity: 100%;
+  background: #ececec;
 }
 
-.pDescription{
-    font-size: 15px;
-    color: #252525;
-    letter-spacing: 0.53px;
-    line-height: 22px;
+.pDescription {
+  font-size: 15px;
+  color: #252525;
+  letter-spacing: 0.53px;
+  line-height: 22px;
 }
-
