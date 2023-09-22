@@ -1,18 +1,17 @@
-.container{
-    margin-left: 171px;
-    margin-right: 171px;
-    align-items: center;
-    width: 1200px;
-    float:none;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  float: none;
 }
 
-.row{
-    height: 300px;
-    margin-bottom: 29px;  
+.row {
+  height: 300px;
 }
 
-.col{
-    margin: 15px;
-    width: 260px;
-    padding: 5px;
+.col {
+  margin: 15px;
+  width: 260px;
+  padding: 5px;
 }

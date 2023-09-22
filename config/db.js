@@ -1,109 +1,116 @@
 const Sequelize = require("sequelize");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 // access to .env variables
-dotenv.config()
+dotenv.config();
 
-const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
-   host: process.env.HOST,
-   dialect: "mysql",
-   logging: console.log
-});  
+const db = new Sequelize(
+  process.env.DATABASE,
+  process.env.USER,
+  process.env.PASSWORD,
+  {
+    host: process.env.HOST,
+    dialect: "mysql",
+    logging: console.log,
+  }
+);
 
-db.authenticate().then(()=> {
-   console.log('Connection has been established successfully.');
-}).catch(err => {
-   console.log('error:' + err);
-})
+db.authenticate()
+  .then(() => {
+    console.log("Connection has been established successfully.");
+  })
+  .catch((err) => {
+    console.log("error:" + err);
+  });
 
-const Product = require('../models/Product')(db, Sequelize);
-const Image = require('../models/Image')(db, Sequelize);
-const Category = require('../models/Category')(db, Sequelize);
-const User = require('../models/User')(db, Sequelize);
+const Product = require("../models/Product")(db, Sequelize);
+const Image = require("../models/Image")(db, Sequelize);
+const Category = require("../models/Category")(db, Sequelize);
+const User = require("../models/User")(db, Sequelize);
 const Residence = require("../models/Residence")(db, Sequelize);
 const Bid = require("../models/Bid")(db, Sequelize);
 const Wishlist = require("../models/Wishlist")(db, Sequelize);
 
 // link user and product
 User.hasMany(Product, {
-   foreignKey: "user_id",
-   sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 Product.belongsTo(User, {
-	foreignKey: "user_id",
-	sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 
 // link product and category
 Category.hasMany(Product, {
-   as: "category",
-   foreignKey: "category_id",
-   sourceKey: "id"
+  as: "category",
+  foreignKey: "category_id",
+  sourceKey: "id",
 });
 Product.belongsTo(Category, {
-	foreignKey: "category_id",
-	sourceKey: "id"
+  foreignKey: "category_id",
+  sourceKey: "id",
 });
 
 // link product and image
 Product.hasMany(Image, {
-   as: "images",
-   foreignKey: 'product_id',
-   sourceKey: "id"
- });
+  as: "images",
+  foreignKey: "product_id",
+  sourceKey: "id",
+});
 Image.belongsTo(Product, {
-   foreignKey: "product_id",
-   sourceKey: "id"
+  foreignKey: "product_id",
+  sourceKey: "id",
 });
 
 // link user and residence
 Residence.hasMany(User, {
-	foreignKey: "residence_id",
-	sourceKey: "id"
+  foreignKey: "residence_id",
+  sourceKey: "id",
 });
 User.belongsTo(Residence, {
-   foreignKey: "residence_id",
-	sourceKey: "id"
+  foreignKey: "residence_id",
+  sourceKey: "id",
 });
 
 // link bid and user
 User.hasMany(Bid, {
-    foreignKey: "user_id",
-	sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 Bid.belongsTo(User, {
-    foreignKey: "user_id",
-	sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 
 // link bid and product
 Product.hasMany(Bid, {
-	as: "bids",
-   	foreignKey: "product_id",
-	sourceKey: "id"
+  as: "bids",
+  foreignKey: "product_id",
+  sourceKey: "id",
 });
 Bid.belongsTo(Product, {
-	as: "products",
-   foreignKey: "product_id",
-	sourceKey: "id"
+  as: "products",
+  foreignKey: "product_id",
+  sourceKey: "id",
 });
 // link wishlist and user
 User.hasMany(Wishlist, {
-   	foreignKey: "user_id",
-	sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 Wishlist.belongsTo(User, {
-   foreignKey: "user_id",
-	sourceKey: "id"
+  foreignKey: "user_id",
+  sourceKey: "id",
 });
 
 // link wishlist and product
 Product.hasMany(Wishlist, {
-   foreignKey: "product_id",
-	sourceKey: "id"
+  foreignKey: "product_id",
+  sourceKey: "id",
 });
 Wishlist.belongsTo(Product, {
-   foreignKey: "product_id",
-	sourceKey: "id"
+  foreignKey: "product_id",
+  sourceKey: "id",
 });
 db.sync(() => console.log(`Tables created!`));
 
@@ -144,4 +151,13 @@ function dataBaseInitialization() {
 	});
 } */
 
-module.exports = { db, User, Image, Product, Category, Residence, Bid, Wishlist };
+module.exports = {
+  db,
+  User,
+  Image,
+  Product,
+  Category,
+  Residence,
+  Bid,
+  Wishlist,
+};
