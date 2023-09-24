@@ -1,117 +1,117 @@
-.NavBar{
-    padding-left: 170px;
-    padding-right: 171px;
-    margin-top: 40px;
-    height: 80px;
-    border: 1px;
-    border-color: black;
-    font-size: 19px;  
+.NavBar {
+  margin-top: 40px;
+  height: 80px;
+  border: 1px;
+  border-color: black;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.NavBarDark{
-    padding-left: 155px;
-    padding-right: 171px;
-    height: 40px;
-    position: fixed;
+.NavBarDark {
+  height: 40px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-registration-buttons-wrapper{
-    font-size: 14px;
-    letter-spacing: 0.49px;
-    color: white;
-    margin-left: 765px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-registration-buttons-wrapper {
+  font-size: 14px;
+  letter-spacing: 0.49px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-registration-button{
-    font-size: 14px;
-    border: none;
-    border-width: 0;
-    width:max-content;
-    height: 17px;
-    margin-left: 5px;
-    background: #252525;
-    text-align: center;
-    display: inline-block;
-    padding: 0;
-    color: white;
+.login-registration-button {
+  font-size: 14px;
+  border: none;
+  border-width: 0;
+  width: max-content;
+  height: 17px;
+  margin-left: 5px;
+  background: #252525;
+  text-align: center;
+  display: inline-block;
+  padding: 0;
+  color: white;
 }
 
-.login-registration-button:hover{
-    background-color: #252525;
-    border-width: 0;
-    color: white;
+.login-registration-button:hover {
+  background-color: #252525;
+  border-width: 0;
+  color: white;
 }
 
-.login-registration-button:link{
-    text-decoration: none;
-    color: white;
+.login-registration-button:link {
+  text-decoration: none;
+  color: white;
 }
 
-.logout-button{
-    font-size: 14px;
-    border: none;
-    border-width: 0;
-    width: max-content;
-    height: 17px;
-    background: #252525;
-    text-align: center;
-    display: inline-block;
-    color: white;
-    margin-left: 905px;
+.logout-button {
+  font-size: 14px;
+  border: none;
+  border-width: 0;
+  width: max-content;
+  height: 17px;
+  background: #252525;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  margin-left: 905px;
 }
 
-.logout-button:hover{
-    background-color: #252525;
-    border-width: 0;
-    color: white;
+.logout-button:hover {
+  background-color: #252525;
+  border-width: 0;
+  color: white;
 }
 
-.logout-button:link{
-    text-decoration: none;
-    color: white;
+.logout-button:link {
+  text-decoration: none;
+  color: white;
 }
 
-.or-parapraph{
-    font-size: 14px;
-    color: #9B9B9B;
-    letter-spacing: 0.49px; 
-    margin-left: 10px;
+.or-parapraph {
+  font-size: 14px;
+  color: #9b9b9b;
+  letter-spacing: 0.49px;
+  margin-left: 10px;
 }
 
-.navLink{
-    font-size: 16px;
-    color: #252525;
-    opacity: 100%;
-    letter-spacing: 0.56px;
-    margin-left: 980px;
+.navLink {
+  font-size: 16px;
+  color: #252525;
+  opacity: 100%;
+  letter-spacing: 0.56px;
 }
 
-.navLink:link{
-    text-decoration: none;
+.navLink:link {
+  text-decoration: none;
 }
 
-.navLink:hover{
-    text-decoration: none;
-    color: #252525;
+.navLink:hover {
+  text-decoration: none;
+  color: #252525;
 }
 
-.navBarIcon{
-    color: gray;
-    width: 25px;
-    height: 25px;
+.navBarIcon {
+  color: gray;
+  width: 25px;
+  height: 25px;
 }
 
-.logoIcon{
-    width: 15px;
-    height: 15px;
-    color: #8367D8;
+.logoIcon {
+  width: 15px;
+  height: 15px;
+  color: #8367d8;
 }
 
-.logo{
-    font-size: 24px;
-    color: #8367D8;
-    letter-spacing: 0.84px;
+.logo {
+  font-size: 24px;
+  color: #8367d8;
+  letter-spacing: 0.84px;
 }

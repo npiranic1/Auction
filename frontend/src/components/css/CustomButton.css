@@ -1,30 +1,30 @@
-.buttonReact{
-    width: 192px;
-    height: 57px;
-    background-color: white;
-    border-color: #8367D8;
-    border-width: 2px;
-    opacity: 100%;
-    font-size: 18px;
-    color: #252525;
-    letter-spacing: 0.63px;
+.buttonReact {
+  width: 192px;
+  height: 57px;
+  background-color: white;
+  border-color: #8367d8;
+  border-width: 2px;
+  opacity: 100%;
+  font-size: 18px;
+  color: #252525;
+  letter-spacing: 0.63px;
 }
-
 
 .buttonReact:hover {
-    background-color: #8367D8;
-    opacity: 100%;
-    transition: 0.2s;
+  background-color: #8367d8;
+  opacity: 100%;
+  transition: 0.2s;
+  border-color: #8367d8;
 }
 
-.buttonText{
-    height: 22px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.buttonText {
+  height: 22px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.button-icon{
-    margin-left: 10px;
+.button-icon {
+  margin-left: 10px;
 }
